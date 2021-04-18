@@ -25,30 +25,66 @@
         <main>
             <form>
             <label for="nomeSobrenome">Nome e Sobrenome</label>
-                <input type="text" id="nomeSobrenome" class="padrao">
+                <input type="text" id="nomeSobrenome" class="padrao" required placeholder="Seu nome">
 
             <label for="Email">Email</label>
-            <input type="text" id="Email" class="padrao">
+            <input type="email" id="Email" class="padrao" required placeholder="usuario@dominio.com">
 
             <label for="Telefone">Telefone</label>
-            <input type="text" id="Telefone" class="padrao">
+            <input type="tel" id="Telefone" class="padrao" required placeholder="(dd) XXXX-XXXX">
 
-            <input type="submit" value="enviar" class="padrao">
             <label for="texto">Informaçoes extras</label>
             <textarea cols="50" rows="10" id="texto" class="padrao"></textarea>
-            <p>Qual meio de comunicação você prefere:</p>
-
-            <label for="radio-email"><input type="radio" name="contato" id="radio-email">Email</label>
+            <fieldset>
+                <legend>Qual meio de comunicação você prefere:</legend>
+                <label for="radio-email"><input type="radio" name="contato" id="radio-email">Email</label>
+                
+                <label for="radio-telefone"><input type="radio" name="contato" id="radio-telefone">Telefone</label>
+                
+                <label for="radio-whatsapp"><input type="radio" name="contato" id="radio-whatsapp" checked>Whatsapp</label>
+            </fieldset>
             
+            <fieldset>
+                <legend>Qual Horario você prefere?</legend>
+                <select>
+                    <option>Manhã</option>
+                    <option>Tarde</option>
+                    <option>Noite</option>
+                </select>
+            </fieldset>
 
-            <label for="radio-telefone"><input type="radio" name="contato" id="radio-telefone">Telefone</label>
-            
+            <label><input type="checkbox" class="checkbox" checked>Desejo receber atualizações de ofertas no email</label>
 
-            <label for="radio-whatsapp"><input type="radio" name="contato" id="radio-whatsapp">Whatsapp</label>
-            
-
-            <label><input type="checkbox" class="checkbox">Voce deseja receber nossas atualizações</label>
+            <input type="submit" value="Enviar formulario" class="enviar">
             </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Segunda</td>
+                        <td>8h~18h</td>
+                    </tr>
+                    <tr>
+                        <td>Quarta</td>
+                        <td>10h~20h</td>
+                    </tr>
+                    <tr>
+                        <td>Sabado</td>
+                        <td>14h~18h</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Rio de Janeiro</td> 
+                    </tr>
+                </tbody>
+
+            </table>
 
         </main>
         <footer>
