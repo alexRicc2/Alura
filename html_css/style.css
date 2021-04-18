@@ -1,48 +1,121 @@
 
 
-#principal{
-    background-color: #ccc;
+header{
+    background-color: #bbb;
+    padding: 20px 0;
+}
+
+.caixa{
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+
+}
+
+nav{
+    position:absolute;
+    top: 110px;
+    right: 0px;
+}
+
+nav li{
+    display: inline;
+    margin-left: 10px;
+}
+
+
+nav a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: #c78c79;
+    text-decoration: underline;
+}
+
+.produtos{
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px 0px;
+}
+
+.produtos li{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    padding: 50px 0px;
+    margin: 0 1.5%;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    border: black 3px solid;
+    border-radius: 6px;
+}
+
+.produtos li:hover{
+    border-color: #c78c79 ;
+
+}
+.produtos li:active{
+    border-color: blue;
+}
+
+.produtos li:hover h2{
+    font-size: 34px;
+}
+
+.produtos h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.produto-descricao{
+    font-size: 18px;
+}
+.produto-preco{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer{
+    background: url("bg.jpg");
+    text-align: center;
     padding: 30px;
 }
-#beneficios{
-    background-color: #fff;
-    padding: 20px;
+
+.copyright{
+    font-size: 13px;
+    color: #bbb;
+    margin-top: 10px;
+
 }
 
-.titulo-principal{
-    padding-left: 20px;
-}
-.titulo-centralizado{
-    text-align: center;
+main{
+    width: 940px;
+    margin: 0 auto;
 }
 
-#banner{
-    width: 100%;
-}
+form{
+    margin:40px 0px;
 
-p{
-    text-align: center;
 }
-
-#missao{
+form label, form p{
+    display: block;
     font-size: 20px;
+    margin-bottom: 10px;
+    
 }
-
-em strong{
-    color: #ff0000;
-}
-
-.itens{
-    font-style: italic;
-}
-
-ul {
-    display: inline-block;
-    vertical-align: top;
-    width: 20%;
-    margin-right: 15%;
-}
-
-.imagem_beneficios{
+.padrao{
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
     width: 50%;
+}
+.checkbox{
+    margin: 20px 0;
 }
