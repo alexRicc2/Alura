@@ -1,12 +1,8 @@
 import { Cliente } from "./Cliente.js"
 export class ContaCorrente{
 
-    agencia
     static numeroDeContas = 0
-    
-    _cliente
-    _saldo = 0
-
+        
     set cliente(novoCliente){ //nao é chamado de metedo, e sim acessor
         if(novoCliente instanceof Cliente)this._cliente = novoCliente
     }
@@ -21,6 +17,7 @@ export class ContaCorrente{
     constructor(cliente, agencia){
         this.agencia = agencia
         this.cliente = cliente //nao vai direto para _cliente, pois quero verificar antes através do acessor  set cliente
+        this._saldo = 0
         ContaCorrente.numeroDeContas++
     }
 
