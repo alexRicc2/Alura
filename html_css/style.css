@@ -18,6 +18,9 @@ nav {
 	top: 110px;
 	right: 0;
 }
+nav ul {
+
+}
 
 nav li {
 	display: inline;
