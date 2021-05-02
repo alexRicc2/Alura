@@ -14,16 +14,18 @@
 
     <p id="p1">Esse é um texto que provalmente alterarei com .innerHTML</p>
 
-    <script>console.log(document.getElementsByClassName("carro")[0].innerHTML)
-    
-    console.log(document.getElementById("p1").innerHTML)
-    
-    var paragrafo = document.getElementById('p1')
-    paragrafo.innerHTML = "novo conteudo"
+    <script>
 
-    paragrafo.style.color = 'red'
-    paragrafo.style.background = 'blue'
-    paragrafo.style.padding = '10px'
+        var paragrafo = document.createElement('p')
+
+        paragrafo.innerHTML = "esse é um paragrafo criado"
+
+        console.log(paragrafo)
+
+        var paragrafoSite = document.querySelector("#p1")
+
+        paragrafoSite.innerHTML = paragrafo.innerHTML
+
     </script>
 </body>
 </html>
