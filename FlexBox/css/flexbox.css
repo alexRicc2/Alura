@@ -50,6 +50,23 @@
     margin-left: 0;
 
 }
+.videoSobre .container{
+    display: flex;
+
+}
+.videoSobre-sobre {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.videoSobre-sobre-list {
+    flex-grow: 1;
+}
+.videoSobre-video {
+    flex-grow: 1;
+    flex-shrink: 2;
+}
 
 @media screen and (max-width: 768px){
 
@@ -65,6 +82,8 @@
 
 .conteudoPrincipal-cursos{
     flex-direction: column;
+    flex-wrap: wrap-reverse;
+    
 }
 .conteudoPrincipal-cursos-link{
     width: 100%;
@@ -90,6 +109,12 @@
 
 .cabecalhoPrincipal-nav-link-app {
     order: -1;
+}
+.videoSobre .container {
+    flex-direction: column;
+}
+.videoSobre-video {
+    margin: 0 auto;
 }
 
 }
