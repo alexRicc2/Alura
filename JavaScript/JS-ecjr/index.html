@@ -5,26 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <style>
+        .green{
+            color: green;
+        }
+        .palmeiras{
+            color: white;
+            background-color: green;
+        }
+    </style>
 </head>
-<body>
-    <div class="carro">Gol</div>
-    <div class="carro">Camaro</div>
-    <div class="carro">porshe</div>
+<body><!--PEIXE-->
+    
+    <h1 id="title">Palmeiras campeao</h1>
 
-    <p id="p1">Esse é um texto que provalmente alterarei com .innerHTML</p>
+    <button id="btn-set">set</button>
+    <button id="btn-remove">remove</button>
+    <button id="btn-get">get</button>
+    <button id="btn-set2">set2</button>
+
+    <p id="class"></p>
 
     <script>
+        document.getElementById('btn-set').addEventListener("click", function(){
+            document.getElementById('title').setAttribute('class',"green")
+        })
 
-        var paragrafo = document.createElement('p')
+        document.getElementById('btn-remove').addEventListener("click",function(){
+            document.getElementById('title').removeAttribute('class')
+        })
 
-        paragrafo.innerHTML = "esse é um paragrafo criado"
+        document.getElementById('btn-get').addEventListener('click', function(){
+           var value = document.getElementById('title').getAttribute('class')
 
-        console.log(paragrafo)
+           document.getElementById('class').innerHTML = value
+        })
 
-        var paragrafoSite = document.querySelector("#p1")
-
-        paragrafoSite.innerHTML = paragrafo.innerHTML
+        document.getElementById('btn-set2').addEventListener('click', function(){
+            document.getElementById('title').setAttribute('class','palmeiras')
+        })
 
     </script>
 </body>
