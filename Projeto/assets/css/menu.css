@@ -1,0 +1,14 @@
+.cabecario{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    background-color: blue;
+    align-items: center;
+    padding: 0 1rem;
+}
+.menu__lista{
+    display: flex;
+}
+.menu__item{
+    margin-right: .5rem;
+}

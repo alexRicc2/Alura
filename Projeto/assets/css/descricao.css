@@ -1,0 +1,15 @@
+.descricao__secao{
+    background-color: coral;
+}
+
+.descricao__secao{
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+.descricao__item{
+    width: 33.33%;
+    color: #fff;
+    text-align: center;
+}

@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/central.css">
+    <link rel="stylesheet" href="assets/css/descricao.css">
+    <link rel="stylesheet" href="assets/css/cursos.css">
 </head>
 <body>
-    <header>
+    <header class="cabecario">
         <h2>Logo</h2>
         <nav class="menu"></nav>
             <ul class="menu__lista">
@@ -20,24 +24,24 @@
     </header>
 
     <section class="central">
-        <h1>Professor Ricardo</h1>
-        <h2>Aprenda a tocar os instrumentos que você sempre quis</h2>
-        <a href="#">Matricule-se</a>
+        <h1 class="central__titulo">Professor Ricardo</h1>
+        <h2 class="central__subtitulo">Aprenda a tocar os instrumentos que você sempre quis</h2>
+        <a href="#" class="btnMatricula">Matricule-se</a>
     </section>
 
     <section class="descricao">
-        <ul>
-            <li>
+        <ul class="descricao__secao">
+            <li class="descricao__item">
                 <p>
                     Aulas particulares semanais
                 </p>
             </li>
-            <li>
+            <li class="descricao__item">
                 <p>
                     Nivel de aprendizado ajustavel a necessidade do aluno
                 </p>                
             </li>
-            <li>
+            <li class="descricao__item">
                 <p>
                     Tenha a experiência completa, do basico ao avançado
                 </p>
@@ -48,16 +52,18 @@
     <section>
         <h2>Cursos</h2>
         <nav>
-            <ul>
-                <li>Violao</li>
-                <li>Guitarra</li>
-                <li>Baixo</li>
-                <li>Teclado</li>
-                <li>Piano</li>
-                <li>Bateria</li>
-                <li>Canto</li>
+            <ul class="cursos">
+                <li class="cursos__item"><a href="#" class="cursos__link">Violao</a></li>
+                <li class="cursos__item"><a href="#" class="cursos__link">Guitarra</a></li>
+                <li class="cursos__item"><a href="#" class="cursos__link">Baixo</a></li>
+                <li class="cursos__item"><a href="#" class="cursos__link">Teclado</a></li>
+                <li class="cursos__item"><a href="#" class="cursos__link">Piano</a></li>
+                <li class="cursos__item"><a href="#" class="cursos__link">Bateria</a></li>
+                <li class="cursos__item"><a href="#" class="cursos__link">Canto</a></li>
             </ul>
         </nav>
     </section>
+
+    <footer>Direitos Reservados ao autor: alex.65.santanna@gmail.com</footer>
 </body>
 </html>

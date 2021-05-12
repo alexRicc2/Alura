@@ -1,0 +1,24 @@
+.central{
+    height: calc(100vh - 50px);
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.central__titulo{
+    color: #fff;
+    font-size: 4.3rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+.central__subtitulo{
+    color: #fff;
+    font-size: 1.1rem;
+}
+.btnMatricula{
+    padding: 1rem 2rem;
+    margin-top: 6rem;
+    background-color: #fff;
+    border-radius: 5px;
+}
