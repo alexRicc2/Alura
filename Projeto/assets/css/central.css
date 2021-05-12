@@ -1,6 +1,10 @@
 .central{
     height: calc(100vh - 50px);
-    background-color: gray;
+    background: url('../imagens/fundo-central.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0, 0.7);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,4 +25,6 @@
     margin-top: 6rem;
     background-color: #fff;
     border-radius: 5px;
+    text-decoration: none;
+    color: #212529;
 }

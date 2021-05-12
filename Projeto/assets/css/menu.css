@@ -2,13 +2,17 @@
     display: flex;
     justify-content: space-between;
     height: 50px;
-    background-color: blue;
+    background-color: #212529;
     align-items: center;
     padding: 0 1rem;
+}
+.logo{
+    color: #fff;
 }
 .menu__lista{
     display: flex;
 }
 .menu__item{
-    margin-right: .5rem;
+    margin-right: .8rem;
+    color: #fff;
 }
