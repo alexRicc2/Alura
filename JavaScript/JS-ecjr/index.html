@@ -5,25 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <style>
+        .green{
+            color: green;
+        }
+        .palmeiras{
+            color: white;
+            background-color: green;
+        }
+    </style>
 </head>
-<body>
-    <div class="carro">Gol</div>
-    <div class="carro">Camaro</div>
-    <div class="carro">porshe</div>
-
-    <p id="p1">Esse é um texto que provalmente alterarei com .innerHTML</p>
-
-    <script>console.log(document.getElementsByClassName("carro")[0].innerHTML)
+<body><!--PEIXE-->
     
-    console.log(document.getElementById("p1").innerHTML)
-    
-    var paragrafo = document.getElementById('p1')
-    paragrafo.innerHTML = "novo conteudo"
+    <h1 id="title">Palmeiras campeao</h1>
 
-    paragrafo.style.color = 'red'
-    paragrafo.style.background = 'blue'
-    paragrafo.style.padding = '10px'
+    <button id="btn-set">set</button>
+    <button id="btn-remove">remove</button>
+    <button id="btn-get">get</button>
+    <button id="btn-set2">set2</button>
+
+    <p id="class"></p>
+
+    <script>
+        document.getElementById('btn-set').addEventListener("click", function(){
+            document.getElementById('title').setAttribute('class',"green")
+        })
+
+        document.getElementById('btn-remove').addEventListener("click",function(){
+            document.getElementById('title').removeAttribute('class')
+        })
+
+        document.getElementById('btn-get').addEventListener('click', function(){
+           var value = document.getElementById('title').getAttribute('class')
+
+           document.getElementById('class').innerHTML = value
+        })
+
+        document.getElementById('btn-set2').addEventListener('click', function(){
+            document.getElementById('title').setAttribute('class','palmeiras')
+        })
+
     </script>
 </body>
 </html>
