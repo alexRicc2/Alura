@@ -13,6 +13,8 @@ public class TestaGerente {
 		pedro.setSenha(12);
 
 		System.out.println(pedro.autentica(13));
+		
+		System.out.println(pedro.getBonificacao());
 	}
 
 }
