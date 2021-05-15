@@ -7,7 +7,9 @@ public class Aluno extends Pessoa{
 		super(nome, idade, sexo, faltas);
 		this.media = media;
 	}
-	
+	public Aluno(String nome){
+		super(nome, 18, 'N', 0);
+	}
 	public void alteraMedia(double media){
 		
 		if(media >= 0 && media <= 10){

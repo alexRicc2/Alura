@@ -7,6 +7,9 @@ public class Professor extends Pessoa{
 		super(nome,idade,sexo,faltas);
 		this.salario = salario;
 	}
+	public Professor(String nome){
+		super(nome, 25, 'N',0);
+	}
 	
 	public void aumentarSalario(double aumento){
 		if(aumento > 0){
