@@ -7,12 +7,17 @@ public class Sapo extends Animal{
 		this.venenoso = venenoso;
 	}
 	
+	public void comunicar(){
+		System.out.println("CROAC CROAC, acho que eh esse o som do sapo kkkkkkk");
+	}
+	public void movimentar(){
+		System.out.println("O sapo saiu pulando para todo lado");
+		super.setFome(true);
+	}
+	
 	public boolean getVenenoso(){
 		return this.venenoso;
 	}
 	
-	public void saltar(){
-		System.out.println("O sapo pulou");
-	}
 	
 }

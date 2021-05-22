@@ -8,8 +8,11 @@ public class Gato extends Animal{
 		this.tipoPelo = tipoPelo;
 	}
 	
-	public void miar(){
-		System.out.println("Miau");
+	public void comunicar(){
+		System.out.println("MIAU");
+	}
+	public void movimentar(){
+		System.out.println("O gato comecou a se movimentar, pulando para todo lado e escalando arvores");
 	}
 	
 	public void setAlturaPulo(int alturaPulo){
