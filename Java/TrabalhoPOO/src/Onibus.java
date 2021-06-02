@@ -6,6 +6,7 @@ public class Onibus {
 	private double kilometragem;
 	private Motorista motorista;
 	
+
 	public Onibus(String modelo, DataHora dataFab, String marca, double kilometragem) {
 		this.modelo = modelo;
 		this.dataFab = dataFab;
@@ -37,6 +38,11 @@ public class Onibus {
 	public void setKilometragem(double kilometragem) {
 		this.kilometragem = kilometragem;
 	}
-	
-	
+	public Motorista getMotorista() {
+		return motorista;
+	}
+
+	public void setMotorista(Motorista motorista) {
+		this.motorista = motorista;
+	}
 }
