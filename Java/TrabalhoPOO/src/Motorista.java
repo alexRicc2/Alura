@@ -6,9 +6,9 @@ public class Motorista {
 	private String Nome;
 	
 	public Motorista(double cnh, DataHora dataAdimissao, String nome) {
-		Cnh = cnh;
+		this.Cnh = cnh;
 		this.dataAdimissao = dataAdimissao;
-		Nome = nome;
+		this.Nome = nome;
 	}
 	public double getCnh() {
 		return Cnh;
