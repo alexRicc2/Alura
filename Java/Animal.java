@@ -1,4 +1,4 @@
-public class Animal{
+public abstract class Animal{
 	
 	private String tipo;
 	private String nome;
@@ -14,6 +14,9 @@ public class Animal{
 		this.quantPatas = quantPatas;
 		this.domestico = domestico;
 	}
+	
+	public abstract void comunicar();
+	public abstract void movimentar();
 	
 	public void alimenta(){
 		this.fome = false;
@@ -33,5 +36,8 @@ public class Animal{
 	}
 	public boolean getDomestico(){
 		return this.domestico;
+	}
+	public void setFome(boolean fome){
+		this.fome = fome;
 	}
 }

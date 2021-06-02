@@ -7,9 +7,14 @@ public class Cachorro extends Animal{
 		this.raca = raca;
 	}
 	
-	public void latir(){
+	public void comunicar(){
 		System.out.println("AUAU");
 	}
+	public void movimentar(){
+		System.out.println("O cachorro esta se movimentando e ficou com fome");
+		super.setFome(true);
+	}
+	
 	
 	public int getRaca(){
 		return this.raca;
