@@ -1,48 +1,114 @@
-
-public class Onibus {
+public class Onibus
+{
 	private String modelo;
-	private Data dataFab;
+	private int anoFab;
 	private String marca;
 	private double kilometragem;
 	private Motorista motorista;
+	private int assentos[][] = new int[8][4];
 	
-
-	public Onibus(String modelo, Data dataFab, String marca, double kilometragem) {
-		this.modelo = modelo;
-		this.dataFab = dataFab;
-		this.marca = marca;
-		this.kilometragem = kilometragem;
+	public Onibus(String modelo, int anoFab, String marca, double kilometragem, Motorista motorista)
+	{
+		setModelo(modelo);
+		setAnoFab(anoFab);
+		setMarca(marca);
+		setKilometragem(kilometragem);
+		setMotorista(motorista);
+		// Java inicia com 0s matriz de inteiros por default, não é preciso inicializar ela :)
 	}
 	
-	public String getModelo() {
-		return modelo;
-	}
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
-	}
-	public Data getDataFab() {
-		return dataFab;
-	}
-	public void setDataFab(Data dataFab) {
-		this.dataFab = dataFab;
-	}
-	public String getMarca() {
-		return marca;
-	}
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-	public double getKilometragem() {
-		return kilometragem;
-	}
-	public void setKilometragem(double kilometragem) {
-		this.kilometragem = kilometragem;
-	}
-	public Motorista getMotorista() {
+    public Motorista getMotorista() {
 		return motorista;
 	}
 
 	public void setMotorista(Motorista motorista) {
 		this.motorista = motorista;
+	} 
+	 
+	public String getModelo()
+	{
+		return modelo;
 	}
+	
+	public void setModelo(String modelo)
+	{
+		if(modelo != "")
+			this.modelo = modelo;
+		else
+			System.out.println("Modelo invalido!");
+	}
+	
+	public int getAnoFab()
+	{
+		return anoFab;
+	}
+	
+	public void setAnoFab(int anoFab)
+	{
+		if(anoFab > 1950 && anoFab < 2022)
+			this.anoFab = anoFab;
+		else
+			System.out.println("Ano de fabricacao invalido");
+	}
+	
+	public String getMarca()
+	{
+		return marca;
+	}
+	
+	public void setMarca(String marca)
+	{
+		if(marca != "")
+			this.marca = marca;
+		else
+			System.out.println("Marca invalida!");
+	}
+	
+	public double getKilometragem()
+	{
+		return kilometragem;
+	}
+	
+	public void setKilometragem(double kilometragem)
+	{
+		if(kilometragem >= 0)
+			this.kilometragem = kilometragem;
+		else
+			System.out.println("Kilometragem invalida!");
+	}
+	
+	public int[][] getAssentos()
+	{
+		return assentos;
+	}
+	
+	public void setAssentos(int i, int j)
+	{
+		if((i >= 0 && i <= 7) && (j>=0 && j<=3) && (this.assentos[i][j] == 0))
+			this.assentos[i][j] = 1;
+		else
+			System.out.println("Coordenadas de assento invalidas!");
+	}
+	
+	
+		/* Na main:
+		int i, j;
+		int assentos[][] = objeto.getAssentos();
+		System.out.println("0 - Assento livre | 1 - Assento ocupado\n");
+		System.out.println("  0   1   2   3");
+		for(i=0; i<8; i++)
+		{
+			System.out.print(i + " ");
+			for(j=0; j<4; j++)
+			{
+				if(j == 2)
+					System.out.print(" ");
+				System.out.printf("[%d]", assentos[i][j]);
+			}
+			System.out.printf("\n");
+		} 
+		System.out.println("Digite as coordenadas do assento: "); -> Exemplo: 0 1, 2 0, 3 2, ...
+		Ler coordenadas e guardar em duas variaveis
+		objeto.setAssentos(var1, var2);
+		*/
 }
