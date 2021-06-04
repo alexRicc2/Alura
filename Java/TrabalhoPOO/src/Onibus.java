@@ -89,11 +89,9 @@ public class Onibus
 		else
 			System.out.println("Coordenadas de assento invalidas!");
 	}
-	
-	
-		/* Na main:
-		int i, j;
-		int assentos[][] = objeto.getAssentos();
+	public void exibirAssentos(){
+		
+		int i,j;
 		System.out.println("0 - Assento livre | 1 - Assento ocupado\n");
 		System.out.println("  0   1   2   3");
 		for(i=0; i<8; i++)
@@ -103,10 +101,15 @@ public class Onibus
 			{
 				if(j == 2)
 					System.out.print(" ");
-				System.out.printf("[%d]", assentos[i][j]);
+				System.out.printf("[%d]", this.assentos[i][j]);
 			}
 			System.out.printf("\n");
 		} 
+		
+	}
+		/* Na main:
+		
+		objeto.exibirAssentos();
 		System.out.println("Digite as coordenadas do assento: "); -> Exemplo: 0 1, 2 0, 3 2, ...
 		Ler coordenadas e guardar em duas variaveis
 		objeto.setAssentos(var1, var2);
