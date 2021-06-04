@@ -21,6 +21,7 @@ public class Cadastros {
 		if(op == 2) {
 			
 			System.out.println("(1)Cadastrar um rota");
+			System.out.println("(2)Alterar um rota");
 			System.out.println("(3)Excluir um rota");
 			
 			op = sc.nextInt();
