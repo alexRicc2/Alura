@@ -1,13 +1,13 @@
 
 public class Onibus {
 	private String modelo;
-	private DataHora dataFab;
+	private Data dataFab;
 	private String marca;
 	private double kilometragem;
 	private Motorista motorista;
 	
 
-	public Onibus(String modelo, DataHora dataFab, String marca, double kilometragem) {
+	public Onibus(String modelo, Data dataFab, String marca, double kilometragem) {
 		this.modelo = modelo;
 		this.dataFab = dataFab;
 		this.marca = marca;
@@ -20,10 +20,10 @@ public class Onibus {
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
-	public DataHora getDataFab() {
+	public Data getDataFab() {
 		return dataFab;
 	}
-	public void setDataFab(DataHora dataFab) {
+	public void setDataFab(Data dataFab) {
 		this.dataFab = dataFab;
 	}
 	public String getMarca() {

@@ -2,10 +2,10 @@
 public class Motorista {
 	
 	private double Cnh;
-	private DataHora dataAdimissao;
+	private Data dataAdimissao;
 	private String Nome;
 	
-	public Motorista(double cnh, DataHora dataAdimissao, String nome) {
+	public Motorista(double cnh, Data dataAdimissao, String nome) {
 		this.Cnh = cnh;
 		this.dataAdimissao = dataAdimissao;
 		this.Nome = nome;
@@ -16,10 +16,10 @@ public class Motorista {
 	public void setCnh(double cnh) {
 		Cnh = cnh;
 	}
-	public DataHora getDataAdimissao() {
+	public Data getDataAdimissao() {
 		return dataAdimissao;
 	}
-	public void setDataAdimissao(DataHora dataAdimissao) {
+	public void setDataAdimissao(Data dataAdimissao) {
 		this.dataAdimissao = dataAdimissao;
 	}
 	public String getNome() {
