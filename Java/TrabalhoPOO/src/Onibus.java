@@ -16,6 +16,31 @@ public class Onibus
 		setMotorista(motorista);
 		// Java inicia com 0s matriz de inteiros por default, não é preciso inicializar ela :)
 	}
+	public void cadastro(){
+		
+		Scanner sc = new Scanner(System.in);
+		String modelo,marca;
+		int anoF;
+		double kilometros;
+		
+		System.out.println("Modelo do onibus: ");
+		modelo = sc.next();
+				
+		System.out.println("Ano de fabricacao: ");
+		anoF = sc.nextInt();
+				
+		System.out.println("Marca do Onibus: ");
+		marca = sc.next();
+				
+		System.out.println("Kilometragem do Onibus: ");
+		kilometros = sc.nextDouble();
+		
+		setModelo(modelo);
+		setAnoFab(anoF);
+		setMarca(marca);
+		setKilometragem(kilometros);
+		
+	}
 	
     public Motorista getMotorista() {
 		return motorista;

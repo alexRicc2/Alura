@@ -48,19 +48,22 @@ public static void main(String args[]) {
 						
 						if(decisao == 1) { //cadastra onibus
 							
+							
 							if(motoristaLista.isEmpty()) {
 								System.out.println("Sem motorista pre cadastrados");
 							}
 							else {
+								Onibus o1 = new Onibus();
+								o1.cadastra();
 								
 								for(i=0;i<motoristaLista.size();i++) {
 									System.out.println("Motorista " + i + " " + motoristaLista.get(i).getNome());
 								}
 								System.out.println("Numero do motorista para o Onibus: ");
 								i = sc.nextInt();
-								
-								Onibus o1 = sistemaC.cadastraOnibus(motoristaLista.get(i));
+								o1.setMotorista(motoristaLista.get());
 								onibusLista.add(o1);
+								
 							}
 						}
 						if(decisao == 2) {
@@ -120,6 +123,33 @@ public static void main(String args[]) {
 						System.out.println(i+1 + "- "+ motoristaLista.get(i).getNome());
 					}
 				}
+			}
+			
+			if(opSistemas == 3){ //Compra passagens
+				
+				int i;
+				
+				System.out.println("Escolha o passageiro que ira comprar a passagem");
+				for(i=0;i<passageirosLista.size();i++){
+					System.out.println(i+1 + " - " + passageirosLista.get(i).getNome);	
+				}
+				
+				System.out.println("Digite a posicao do passageiro desejado: ");
+				posPassageiro = sc.nextInt();
+				
+				System.out.println("Escolha a rota que ira comprar");
+				
+				for(j=0;j<rotasLista.size();j++){
+					System.out.println("Rota "+j);
+					rotasLista.get(j).exibeRota();
+				}
+				posRota = sc.nextInt();
+				
+				passageirosLista.get(posPassageiro).setPassagens(rotasLista.get(posRotas));
+				
+				
+				
+				
 			}
 			}
 	}

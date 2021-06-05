@@ -18,11 +18,10 @@ public class Rotas {
 		
 	}
 	
-	
 
 	public Rotas(int rOrigem, int rdestino, int rParada1, int rParada2, int rParada3, int onibus, Hora horaIda,
 			Hora horaChegada, double valor) {
-		super();
+		
 		ROrigem = rOrigem;
 		Rdestino = rdestino;
 		RParada1 = rParada1;
@@ -34,7 +33,10 @@ public class Rotas {
 		Valor = valor;
 	}
 
-
+	public void cadastra(){
+		
+		System.out.println("");
+	}
 
 	public void mostraCidade(int cidade) {
 		
@@ -53,6 +55,7 @@ public class Rotas {
 
 
 	public int getROrigem() {
+		this.mostraCidade(this.ROrigem);
 		return ROrigem;
 	}
 
@@ -158,6 +161,9 @@ public class Rotas {
 		Valor = valor;
 	}
 	
-	
+	public void exibeRotas(){
+		System.out.println("Origem: " + this.getROrigem() + "Destino: "+ this.getRdestino() + "Hora de saida: "+ this.getHoraIda().getHora() + "Hora de chegada: "+ this.getHoraChegada().getHora() +
+		"Valor da passagem: " + this.getValor);
+	}
 	
 }
