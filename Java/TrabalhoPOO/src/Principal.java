@@ -36,6 +36,37 @@ public static void main(String args[]) {
 					op = sc.nextInt();
 					
 					
+					if(op == 1){
+						
+						Passageiro p1 = new Passageiro();
+						p1.cadastra();
+						passageirosLista.add(p1);
+						
+					}
+					
+					if(op == 2){
+						int i;
+						if(onibusLista.isEmpty()) {
+								System.out.println("Sem onibus pre cadastrados");
+							}
+						else{
+							Rotas r1 = new Rotas();
+							
+							r1.cadastra();
+							for(i=0;i<onibusLista.size();i++) {
+									System.out.println("Onibus " + i + " " + onibusLista.get(i).getModelo());
+								}
+							System.out.println("Numero do onibus para a rota: ");
+							i = sc.nextInt();
+							
+							r1.setOnibus(onibusLista.get(i));
+							
+							rotasLista.add(r1);
+								
+							
+						}
+					}
+					
 					if(op == 3) {
 						int i;
 						
@@ -95,7 +126,9 @@ public static void main(String args[]) {
 					
 					if(op == 4) { //cadastra motorista
 						
-						Motorista m1 = sistemaC.cadastraMotorista();
+						Motorista m1 = new Motorista();
+						m1.cadastra();
+						
 						motoristaLista.add(m1);
 					}
 					

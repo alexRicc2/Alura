@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Rotas {
 	
@@ -6,7 +7,7 @@ public class Rotas {
 	private int RParada1;
 	private int RParada2;
 	private int RParada3;
-	private int onibus;
+	private Onibus onibus;
 	private Hora HoraIda;
 	private Hora HoraChegada;
 	private double Valor;
@@ -19,23 +20,59 @@ public class Rotas {
 	}
 	
 
-	public Rotas(int rOrigem, int rdestino, int rParada1, int rParada2, int rParada3, int onibus, Hora horaIda,
-			Hora horaChegada, double valor) {
-		
-		ROrigem = rOrigem;
-		Rdestino = rdestino;
-		RParada1 = rParada1;
-		RParada2 = rParada2;
-		RParada3 = rParada3;
-		this.onibus = onibus;
-		HoraIda = horaIda;
-		HoraChegada = horaChegada;
-		Valor = valor;
-	}
 
 	public void cadastra(){
 		
-		System.out.println("");
+		Scanner sc = new Scannner(System.in);
+		int origem,p1,p2,p3,destino,h1,m1,h2,m2;
+		double valor;
+		
+		
+		System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
+		System.out.println("Numero cidade Origem: ");
+		origem = sc.nextInt();
+		this.setROrigem(origem);
+		
+		System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
+		System.out.println("Numero da primeira parada: ");
+		p1 = sc.nextInt();
+		this.setRParada1(p1);
+		
+		System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
+		System.out.println("Numero da segunda  parada: ");
+		p2 = sc.nextInt();
+		this.setRParada2(p2);
+		
+		System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
+		System.out.println("Numero da terceira parada: ");
+		p3 = sc.nextInt();
+		this.setRParada3(p3);
+		
+		System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
+		System.out.println("Numero cidade Destino: ");
+		origem = sc.nextInt();
+		this.setROrigem(origem);
+		
+		System.out.println("Hora de saida: ");
+		h1 = sc.nextInt();
+		System.out.println("Minuto de saida: ");
+		m1 = sc.nextInt();
+		Hora hSaida = new Hora(h1,m1);
+		this.setHoraIda(hSaida);
+		
+		System.out.println("Hora de chegada: ");
+		h2 = sc.nextInt();
+		System.out.println("Minuto de chegada: ");
+		m2 = sc.nextInt();
+		Hora hChegada = new Hora(h2,m2);
+		this.setHoraChegada(hChegada);
+		
+		System.out.println("Valor da passagem: ");
+		valor = sc.nextDouble();
+		this.setValor(valor);
+		
+		System.out.println("Rota cadastrada!");
+		
 	}
 
 	public void mostraCidade(int cidade) {
@@ -121,7 +158,7 @@ public class Rotas {
 
 
 
-	public void setOnibus(int onibus) {
+	public void setOnibus(Onibus onibus) {
 		this.onibus = onibus;
 	}
 

@@ -5,11 +5,39 @@ public class Motorista {
 	private Data dataAdimissao;
 	private String Nome;
 	
-	public Motorista(double cnh, Data dataAdimissao, String nome) {
-		this.Cnh = cnh;
-		this.dataAdimissao = dataAdimissao;
-		this.Nome = nome;
+	public cadastro(){
+		
+			String nome;
+			double Cnh;
+			int ano,mes,dia,hora,minuto;
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("(1)Cadastrar um motorista");
+			
+			System.out.println("Digite o nome do motorista: ");
+			nome = sc.next();
+			this.setNome(nome);
+			
+			System.out.println("Digite o numero da CNH: ");
+			Cnh = sc.nextDouble();
+			this.setCnh(Cnh);
+			
+			System.out.println("DATA DE ADIMISSAO");
+			System.out.println("Ano: ");
+			ano = sc.nextInt();
+			System.out.println("Mes: ");
+			mes = sc.nextInt();
+			System.out.println("Dia: ");
+			dia = sc.nextInt();
+			
+			
+			Data data1 = new Data(dia,mes,ano);
+			this.setDataAdimissao(data1);
+			
+			System.out.println("O motorista "+ this.getNome() + " Foi cadastrado com sucesso");
+			System.out.println("O motorista tem data de admissao em "+ this.getDataAdimissao().getData());
 	}
+	
 	public double getCnh() {
 		return Cnh;
 	}

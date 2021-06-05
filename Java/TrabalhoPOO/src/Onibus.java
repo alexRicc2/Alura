@@ -7,15 +7,7 @@ public class Onibus
 	private Motorista motorista;
 	private int assentos[][] = new int[8][4];
 	
-	public Onibus(String modelo, int anoFab, String marca, double kilometragem, Motorista motorista)
-	{
-		setModelo(modelo);
-		setAnoFab(anoFab);
-		setMarca(marca);
-		setKilometragem(kilometragem);
-		setMotorista(motorista);
-		// Java inicia com 0s matriz de inteiros por default, não é preciso inicializar ela :)
-	}
+
 	public void cadastro(){
 		
 		Scanner sc = new Scanner(System.in);
