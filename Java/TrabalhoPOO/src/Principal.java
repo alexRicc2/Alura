@@ -18,7 +18,7 @@ public static void main(String args[]) {
 		
 		while(opSistemas != 0) {
 		
-			System.out.println("1 - Sistema de Cadastros");
+			System.out.println("\n1 - Sistema de Cadastros");
 			System.out.println("2 - Mostrar cadastros");
 			System.out.println("3 - Comprar Passagens");
 			opSistemas = sc.nextInt();
@@ -26,7 +26,7 @@ public static void main(String args[]) {
 			if(opSistemas == 1) {
 				
 				while(op != 0) {
-					System.out.println("Sistema de cadastros");
+					System.out.println("\nSistema de cadastros");
 					System.out.println("(1)Passageiro");
 					System.out.println("(2)Rota");
 					System.out.println("(3)Cadastrar um Onibus");
@@ -39,7 +39,7 @@ public static void main(String args[]) {
 					if(op == 3) {
 						int i;
 						
-						System.out.println("(1)Cadastrar um Onibus");
+						System.out.println("\n(1)Cadastrar um Onibus");
 						System.out.println("(2)Alterar um Onibus");
 						System.out.println("(3)Excluir um Onibus");
 						System.out.println("Sua escolha: ");
@@ -99,7 +99,7 @@ public static void main(String args[]) {
 					}
 				}
 			if(opSistemas == 2) {
-				System.out.println("1- Lista de passageiros");
+				System.out.println("\n1- Lista de passageiros");
 				System.out.println("2- Lista de rotas");
 				System.out.println("3- Lista de onibus");
 				System.out.println("4- Lista de motorista");
