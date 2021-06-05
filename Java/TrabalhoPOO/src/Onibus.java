@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Onibus
 {
 	private String modelo;
@@ -8,7 +10,7 @@ public class Onibus
 	private int assentos[][] = new int[8][4];
 	
 
-	public void cadastro(){
+	public void cadastra(){
 		
 		Scanner sc = new Scanner(System.in);
 		String modelo,marca;

@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Passageiro {
 	
@@ -10,19 +11,10 @@ public class Passageiro {
 	private String PEndereco;
 	private String PProfissao;
 	private int PCod;
-	private ArrayList<Rotas> passagens = new ArrayList<>;
-	
-	public Passageiro(int rG, Data dataNsc, String nome, String endereco, int cod, String profissao) {
-		this.PRG = rG;
-		this.PDataNsc = dataNsc;
-		this.PProfissao = profissao;
-		this.PNome = nome;
-		this.PEndereco = endereco;
-		this.PCod = cod;
-	}
+	private ArrayList<Rotas> passagens = new ArrayList<>();
 	
 	
-	public void CadastrarPassageiro()
+	public void cadastra()
 	{
 		String nome, endereco, profissao;
 		int ano,mes,dia, cod, rg;
@@ -97,9 +89,18 @@ public class Passageiro {
 	public void setPCod(int tipo) {
 		this.PCod = tipo;
 	}
+	public void apresentaPassageiro() {
+		int i;
+		System.out.println("Passageiro " + this.getPNome() + " Possui "+ passagens.size() +" passagens");
+		for(i=0;i<passagens.size();i++) {
+			passagens.get(i).exibeRotas();
+			
+		}
+		
+	}
 	public void setPassagens(Rotas passagem){
 		this.passagens.add(passagem);
-		System.out.println("Passagem para " + passagem.getRDestino()+ " comprada!");
+		System.out.println("Passagem para " + passagem.getRdestino()+ " comprada!");
 	}
 	
 }

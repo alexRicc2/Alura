@@ -10,20 +10,12 @@ public class Rotas {
 	private Onibus onibus;
 	private Hora HoraIda;
 	private Hora HoraChegada;
-	private double Valor;
-	
-	public Rotas(int origem, int destino) {
-		
-		this.ROrigem = origem;
-		this.Rdestino = destino;
-		
-	}
-	
+	private double Valor;	
 
 
 	public void cadastra(){
 		
-		Scanner sc = new Scannner(System.in);
+		Scanner sc = new Scanner(System.in);
 		int origem,p1,p2,p3,destino,h1,m1,h2,m2;
 		double valor;
 		
@@ -50,8 +42,8 @@ public class Rotas {
 		
 		System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
 		System.out.println("Numero cidade Destino: ");
-		origem = sc.nextInt();
-		this.setROrigem(origem);
+		destino = sc.nextInt();
+		this.setRdestino(destino);
 		
 		System.out.println("Hora de saida: ");
 		h1 = sc.nextInt();
@@ -71,29 +63,40 @@ public class Rotas {
 		valor = sc.nextDouble();
 		this.setValor(valor);
 		
-		System.out.println("Rota cadastrada!");
 		
 	}
 
-	public void mostraCidade(int cidade) {
+	public String mostraCidade(int cidade) {
 		
-		
+		String cidadeNome;
 		switch(cidade) {
 		case 1: 
-			System.out.println("Sao jose do Rio Preto");
+			cidadeNome = "Sao jose do Rio Preto";
+			break;
+		case 2: 
+			cidadeNome = "Olimpia";
+			break;
+		case 3: 
+			cidadeNome = "Sao Paulo";
+			break;
+		case 4: 
+			cidadeNome = "Mirassol";
+			break;
+		case 5: 
+			cidadeNome = "Votuporanga";
 			break;
 			
 			default:
-			System.out.println("Nada");
+			cidadeNome = "indefinido";
 		}
-		
+		return cidadeNome;
 	}
 
 
 
-	public int getROrigem() {
-		this.mostraCidade(this.ROrigem);
-		return ROrigem;
+	public String getROrigem() {
+		return this.mostraCidade(this.ROrigem);
+		
 	}
 
 
@@ -104,8 +107,9 @@ public class Rotas {
 
 
 
-	public int getRdestino() {
-		return Rdestino;
+	public String getRdestino() {
+		return this.mostraCidade(this.Rdestino);
+		
 	}
 
 
@@ -116,8 +120,9 @@ public class Rotas {
 
 
 
-	public int getRParada1() {
-		return RParada1;
+	public String getRParada1() {
+		return this.mostraCidade(this.RParada1);
+		
 	}
 
 
@@ -128,8 +133,9 @@ public class Rotas {
 
 
 
-	public int getRParada2() {
-		return RParada2;
+	public String getRParada2() {
+		return this.mostraCidade(this.RParada2);
+		
 	}
 
 
@@ -140,8 +146,8 @@ public class Rotas {
 
 
 
-	public int getRParada3() {
-		return RParada3;
+	public String getRParada3() {
+		return this.mostraCidade(this.RParada3);
 	}
 
 
@@ -152,7 +158,7 @@ public class Rotas {
 
 
 
-	public int getOnibus() {
+	public Onibus getOnibus() {
 		return onibus;
 	}
 
@@ -199,8 +205,8 @@ public class Rotas {
 	}
 	
 	public void exibeRotas(){
-		System.out.println("Origem: " + this.getROrigem() + "Destino: "+ this.getRdestino() + "Hora de saida: "+ this.getHoraIda().getHora() + "Hora de chegada: "+ this.getHoraChegada().getHora() +
-		"Valor da passagem: " + this.getValor);
+		System.out.println("Origem: " + this.getROrigem() + " Destino: "+ this.getRdestino() + " Hora de saida: "+ this.getHoraIda().getHora() + " Hora de chegada: "+ this.getHoraChegada().getHora() +
+		" Valor da passagem: " + this.getValor());
 	}
 	
 }

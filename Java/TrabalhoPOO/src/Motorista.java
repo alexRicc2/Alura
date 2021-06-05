@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Motorista {
 	
@@ -5,7 +6,7 @@ public class Motorista {
 	private Data dataAdimissao;
 	private String Nome;
 	
-	public cadastro(){
+	public void cadastra(){
 		
 			String nome;
 			double Cnh;
