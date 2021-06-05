@@ -13,8 +13,6 @@ public class Motorista {
 			int ano,mes,dia,hora,minuto;
 			Scanner sc = new Scanner(System.in);
 			
-			System.out.println("(1)Cadastrar um motorista");
-			
 			System.out.println("Digite o nome do motorista: ");
 			nome = sc.next();
 			this.setNome(nome);
