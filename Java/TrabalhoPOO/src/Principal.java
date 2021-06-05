@@ -37,7 +37,7 @@ public static void main(String args[]) {
 					op = sc.nextInt();
 					
 					
-					if(op == 1){ //cadastro de Passageiros
+					if(op == 1){ //Menu Paasageiro
 						
 						System.out.println("\n(1)Cadastrar um Passageiro");
 						System.out.println("(2)Alterar um Passageiro");
@@ -45,12 +45,12 @@ public static void main(String args[]) {
 						System.out.println("Sua escolha: ");
 						decisao = sc.nextInt();
 						
-						if(decisao == 1) {
+						if(decisao == 1) { //Cadastra Passageiro
 							Passageiro p1 = new Passageiro();
 							p1.cadastra();
 							passageirosLista.add(p1);
 						}
-						else if(decisao == 3) {
+						else if(decisao == 3) { //Deleta Passsageiro
 							System.out.println("Ha "+ passageirosLista.size() +" passageiros cadastrados");
 							for(i=0;i<passageirosLista.size();i++) {
 								System.out.println(i+": ");
@@ -64,7 +64,7 @@ public static void main(String args[]) {
 						}
 					}
 					
-					if(op == 2){ //cadastro de ROTAS, necessario um onibus
+					if(op == 2){ //Menu Rotas, necessario pelo menos um onibus
 						
 						
 						System.out.println("\n(1)Cadastrar uma Rota");
@@ -73,7 +73,7 @@ public static void main(String args[]) {
 						System.out.println("Sua escolha: ");
 						decisao = sc.nextInt();
 						
-						if(decisao == 1){
+						if(decisao == 1){ //Cadastra uma Rota
 							if(onibusLista.isEmpty()) {
 									System.out.println("Sem onibus pre cadastrados");
 								}
@@ -97,8 +97,8 @@ public static void main(String args[]) {
 									
 								
 							}
-						if(decisao == 2);
-						if(decisao == 3){
+						if(decisao == 2); //Altera uma rota
+						if(decisao == 3){ //Deleta uma Rota 
 							
 							System.out.println("Ha "+ rotasLista.size() +" rotas cadastradas");
 							for(i=0;i<rotasLista.size();i++) {
@@ -115,7 +115,7 @@ public static void main(String args[]) {
 						}
 					}
 					
-					if(op == 3) { // cadastro de onibus, necessario um motorista
+					if(op == 3) { // Menu Onibus, necessario pelo menos um motorista
 					
 						
 						System.out.println("\n(1)Cadastrar um Onibus");
@@ -149,7 +149,7 @@ public static void main(String args[]) {
 								
 							}
 						}
-						if(decisao == 2) {
+						if(decisao == 2) { // altera Onibus
 							for(i=0;i<onibusLista.size();i++) {
 								System.out.println("onibus indice[" + i + "] " + onibusLista.get(i).getModelo());
 							}
@@ -173,11 +173,11 @@ public static void main(String args[]) {
 						}
 					}
 					
-					if(op == 4) { //cadastra motorista
+					if(op == 4) { //Menu motorista
 						
-						System.out.println("\n(1)Cadastrar um Onibus");
-						System.out.println("(2)Alterar um Onibus");
-						System.out.println("(3)Excluir um Onibus");
+						System.out.println("\n(1)Cadastrar um Motorista");
+						System.out.println("(2)Alterar um Motorista");
+						System.out.println("(3)Excluir um Motorista");
 						System.out.println("Sua escolha: ");
 						
 						decisao = sc.nextInt();
@@ -189,8 +189,8 @@ public static void main(String args[]) {
 						
 						motoristaLista.add(m1);
 						}
-						if(decisao == 2);
-						if(decisao == 3){
+						if(decisao == 2); //Altera Motorista
+						if(decisao == 3){ //Deleta Motorista
 							
 							System.out.println("Ha "+ motoristaLista.size() +" motoristas cadastrados");
 							for(i=0;i<rotasLista.size();i++) {
@@ -206,7 +206,7 @@ public static void main(String args[]) {
 					
 					}
 				}
-			if(opSistemas == 2) {
+			if(opSistemas == 2) { //Sistema mostra Cadastrados
 				System.out.println("\n1- Lista de passageiros");
 				System.out.println("2- Lista de rotas");
 				System.out.println("3- Lista de onibus");
@@ -215,7 +215,7 @@ public static void main(String args[]) {
 				op = sc.nextInt();
 				
 				
-				if(op == 1) {
+				if(op == 1) { //Mostra Passageiros Cadastrados
 					System.out.println("Ha "+ passageirosLista.size() +" passageiros cadastrados");
 					for(i=0;i<passageirosLista.size();i++) {
 						passageirosLista.get(i).apresentaPassageiro();
@@ -223,7 +223,7 @@ public static void main(String args[]) {
 					}
 				}
 				
-				if(op == 2) {
+				if(op == 2) { //Mostra Rotas cadastradas
 					System.out.println("Ha "+ rotasLista.size() +" rotas cadastrados");
 					for(i=0;i<rotasLista.size();i++) {
 						System.out.println(i+1);
@@ -231,7 +231,7 @@ public static void main(String args[]) {
 					}
 				}
 				
-				if(op == 3) {
+				if(op == 3) { //Mostra Onibus cadastrados
 				
 					System.out.println("Ha "+ onibusLista.size() +" onibus cadastrados");
 					for(i=0;i<onibusLista.size();i++) {
@@ -240,7 +240,7 @@ public static void main(String args[]) {
 					}
 				}
 				
-				if(op == 4) {
+				if(op == 4) { //Mostra Motorista Cadastrado
 					
 					System.out.println("Ha "+ motoristaLista.size() +" motoristas cadastrados");
 					for(i=0;i<motoristaLista.size();i++) {
@@ -249,7 +249,7 @@ public static void main(String args[]) {
 				}
 			}
 			
-			if(opSistemas == 3){ //Compra passagens
+			if(opSistemas == 3){ // Sistema Compra passagens
 				
 				int posPassageiro,posRota,j,x,y;
 				
