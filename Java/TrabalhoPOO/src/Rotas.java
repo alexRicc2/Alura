@@ -92,7 +92,12 @@ public class Rotas {
 		return cidadeNome;
 	}
 
-
+	public int getDestino() {
+		return this.Rdestino;
+	}
+	public int getOrigem() {
+		return this.ROrigem;
+	}
 
 	public String getROrigem() {
 		return this.mostraCidade(this.ROrigem);

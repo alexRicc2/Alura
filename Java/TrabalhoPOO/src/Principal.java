@@ -84,11 +84,15 @@ public static void main(String args[]) {
 								System.out.println("Onibus disponiveis para esta rota: ");
 								
 								for(i=0;i<onibusLista.size();i++) {
-										System.out.println("Onibus indice[" + i + "] " + onibusLista.get(i).getModelo());
-									}
+										if(onibusLista.get(i).getTemRota() == false)System.out.println("Onibus indice[" + i + "] " + onibusLista.get(i).getModelo());
+										
+									
+								}
 								System.out.println("\nNumero do onibus para a rota: ");
 								i = sc.nextInt();
 								
+								onibusLista.get(i).setTemRota();
+								//System.out.println("valor do temRota : "+ onibusLista.get(i).getTemRota());
 								r1.setOnibus(onibusLista.get(i));
 								
 								rotasLista.add(r1);
@@ -251,7 +255,7 @@ public static void main(String args[]) {
 			
 			if(opSistemas == 3){ // Sistema Compra passagens
 				
-				int posPassageiro,posRota,j,x,y;
+				int posPassageiro,posRota,j,x,y,origem,destino;
 				
 				System.out.println("Escolha o passageiro que ira comprar a passagem");
 				for(i=0;i<passageirosLista.size();i++){
@@ -262,12 +266,28 @@ public static void main(String args[]) {
 				
 				posPassageiro = sc.nextInt();
 				
-				System.out.println("Escolha a rota que ira comprar");
-				
 				for(j=0;j<rotasLista.size();j++){
 					System.out.println("Rota "+j);
 					rotasLista.get(j).exibeRotas();
 				}
+				
+				System.out.println("Escolha a cidade de origem: ");
+				System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
+				origem = sc.nextInt();
+				
+				System.out.println("Escolha a cidade destino: ");
+				System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
+				destino = sc.nextInt();
+				
+				
+				for(j=0;j<rotasLista.size();j++) {
+					if(origem == rotasLista.get(j).getOrigem() && destino == rotasLista.get(j).getDestino()) {
+						System.out.println("Rota "+j);
+						rotasLista.get(j).exibeRotas();
+					}
+				}
+				
+				
 				System.out.println("Digite o indice da rota que ira comprar: ");
 				posRota = sc.nextInt();
 				

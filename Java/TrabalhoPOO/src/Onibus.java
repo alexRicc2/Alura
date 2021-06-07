@@ -8,6 +8,7 @@ public class Onibus
 	private double kilometragem;
 	private Motorista motorista;
 	private int assentos[][] = new int[8][4];
+	private boolean temRota = false;
 	
 
 	public void cadastra(){
@@ -35,7 +36,12 @@ public class Onibus
 		setKilometragem(kilometros);
 		
 	}
-	
+	public boolean getTemRota() {
+		return this.temRota;
+	}
+	public void setTemRota() {
+		this.temRota = true;
+	}
     public Motorista getMotorista() {
 		return motorista;
 	}

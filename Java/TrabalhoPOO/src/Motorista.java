@@ -5,6 +5,7 @@ public class Motorista {
 	private double Cnh;
 	private Data dataAdimissao;
 	private String Nome;
+
 	
 	public void cadastra(){
 		
