@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Motorista {
+public class Motorista extends Metodos{
 	
 	private double Cnh;
 	private Data dataAdimissao;

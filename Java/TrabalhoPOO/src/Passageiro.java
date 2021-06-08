@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Passageiro {
+public class Passageiro extends Metodos {
 	
 	Scanner sc = new Scanner(System.in);
 	

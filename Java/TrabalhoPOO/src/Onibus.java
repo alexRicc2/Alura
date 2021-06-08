@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Onibus
+public class Onibus extends Metodos
 {
 	private String modelo;
 	private int anoFab;

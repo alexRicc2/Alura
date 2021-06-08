@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Rotas {
+public class Rotas extends Metodos{
 	
 	private int ROrigem;
 	private int Rdestino;
