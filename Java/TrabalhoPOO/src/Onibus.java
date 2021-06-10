@@ -18,24 +18,67 @@ public class Onibus extends Metodos
 		int anoF;
 		double kilometros;
 		
+		System.out.println("(1)Cadastrar um onibus");
+		
 		System.out.println("Modelo do onibus: ");
-		modelo = sc.next();
+		modelo = sc.nextLine();
+		this.setModelo(modelo);
 				
 		System.out.println("Ano de fabricacao: ");
 		anoF = sc.nextInt();
+		this.setAnoFab(anoF);
 				
 		System.out.println("Marca do Onibus: ");
-		marca = sc.next();
+		marca = sc.nextLine();
+		this.setMarca(marca);
 				
 		System.out.println("Kilometragem do Onibus: ");
 		kilometros = sc.nextDouble();
-		
-		setModelo(modelo);
-		setAnoFab(anoF);
-		setMarca(marca);
-		setKilometragem(kilometros);
+		this.setKilometragem(kilometros);
 		
 	}
+	
+	public void alterar()
+	{
+		int op;
+		Scanner sc = new Scanner(System.in);
+		
+		do{
+		System.out.println("(2)Alterar um onibus");
+		System.out.println("\n1- Modelo");
+		System.out.println("2- Marca");
+		System.out.println("3- Kilometragem");
+		System.out.println("Digite a opcao que deseja alterar: ");
+		op = sc.nextInt();
+		}while(op < 1 || op > 3);
+		
+		if(op == 1)
+		{
+			String Modelo;
+			System.out.println("Digite o modelo do onibus: ");
+			Modelo = sc.nextLine();
+			this.setModelo(Modelo);
+		}
+		
+		else if(op == 2)
+		{
+			String Marca;
+			System.out.println("Digite a marca do onibus: ");
+			Marca = sc.nextLine();
+			this.setMarca(Marca);
+		}
+		
+		else
+		{
+			double Kilometragem;
+			System.out.println("Digite a kilometragem do onibus: ");
+			Kilometragem = sc.nextDouble();
+			this.setKilometragem(Kilometragem);
+		}
+		
+		System.out.println("Alteracao salva com sucesso!");
+	}
+	
 	public boolean getTemRota() {
 		return this.temRota;
 	}

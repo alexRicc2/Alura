@@ -1,93 +1,154 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Passageiro extends Metodos {
+public class Passageiro extends Metodos{
 	
 	Scanner sc = new Scanner(System.in);
 	
-	private int PRG;
-	private Data PDataNsc;
-	private String PNome;
-	private String PEndereco;
-	private String PProfissao;
-	private int PCod;
+	private int pRG;
+	private Data pDataNsc;
+	private String pNome;
+	private String pEndereco;
+	private String pProfissao;
+	private int pCod;
 	private ArrayList<Rotas> passagens = new ArrayList<>();
 	
 	
 	public void cadastra()
 	{
 		String nome, endereco, profissao;
-		int ano,mes,dia, cod, rg;
+		int cod, rg;
+		
+		System.out.println("(1)Cadastrar um passageiro");
 		
 		System.out.println("\n\nDigite o codigo do passageiro: ");
 		cod = sc.nextInt();
+		this.setPCod(cod);
+		
 		System.out.println("Digite o nome do passageiro: ");
-		nome = sc.next();
+		nome = sc.nextLine();
+		this.setPNome(nome);
+		
 		System.out.println("Digite o numero do RG: ");
 		rg = sc.nextInt();
+		this.setPRG(rg);
+		
 		System.out.println("Digite o endereco do passageiro: ");
-		endereco = sc.next();
+		endereco = sc.nextLine();
+		this.setPEndereco(endereco);
+		
 		System.out.println("Digite a profissao do passageiro: ");
-		profissao = sc.next();
+		profissao = sc.nextLine();
+		this.setPProfissao(profissao);
+		
 		System.out.println("Data de Nascimento");
-		System.out.println("Ano: ");
-		ano = sc.nextInt();
-		System.out.println("Mes: ");
-		mes = sc.nextInt();
-		System.out.println("Dia: ");
-		dia = sc.nextInt();
+		System.out.print("Digite a data no formato dd mm aaaa: ");
+		int dia = sc.nextInt();
+		int mes = sc.nextInt();
+		int ano = sc.nextInt();
 										
 		Data data = new Data(dia,mes,ano);
-		
-		this.PRG = rg;
-		this.PProfissao = profissao;
-		this.PNome = nome;
-		this.PEndereco = endereco;
-		this.PCod = cod;
+		this.setPDataNsc(data);
 											
 		System.out.println("O passageiro "+ getPNome() + " foi cadastrado com sucesso");
 	}
 	
+	public void alterar()
+	{
+		int op;
+		Scanner sc = new Scanner(System.in);
+		
+		do{
+			System.out.println("(2)Alterar um passageiro");
+			System.out.println("\n1- Nome");
+			System.out.println("2- Endereco");
+			System.out.println("3- Profissao");
+			System.out.println("Digite a opcao que deseja alterar: ");
+			op = sc.nextInt();
+		}while(op < 1 || op > 3);
+		
+		if(op == 1)
+		{
+			String nome;
+			System.out.println("Digite o nome do passageiro: ");
+			nome = sc.nextLine();
+			this.setPNome(nome);
+		}
+		
+		else if(op == 2)
+		{
+			String endereco;
+			System.out.println("Digite o endereco do passageiro: ");
+			endereco = sc.nextLine();
+			this.setPEndereco(endereco);
+		}
+		
+		else
+		{
+			String profissao;
+			System.out.println("Digite a profissao do passageiro: ");
+			profissao = sc.nextLine();
+			this.setPProfissao(profissao);
+		}
+		
+		System.out.println("Alteracao salva com sucesso!");
+	}
+	
 	public int getPRG() {
-		return PRG;
+		return pRG;
 	}
 	public void setPRG(int rG) {
-		PRG = rG;
+		if(rg > 0)
+			this.pRG = rG;
+		else
+			System.out.println("RG Invalido!");
 	}
 	
 	public Data getPDataNsc() {
-		return PDataNsc;
+		return pDataNsc;
 	}
 	public void setPDataNsc(Data dataNsc) {
-		PDataNsc = dataNsc;
+		this.pDataNsc = dataNsc;
 	}
 	
 	public String getPNome() {
-		return PNome;
+		return pNome;
 	}
 	public void setPNome(String nome) {
-		this.PNome = nome;
+		if(nome != "")
+			this.pNome = nome;
+		else
+			System.out.println("Nome invalido!");
 	}
 	
 	public String getPProfissao() {
-		return PProfissao;
+		return pProfissao;
 	}
 	public void setPProfissao(String profissao) {
-		this.PProfissao = profissao;
+		if(profissao != "")
+			this.pProfissao = profissao;
+		else
+			System.out.println("Profissao invalida!");
 	}
 	
 	public String getPEndereco() {
-		return PEndereco;
+		return pEndereco;
 	}
 	public void setPEndereco(String endereco) {
-		this.PEndereco = endereco;
+		if(endereco != "")
+			this.pEndereco = endereco;
+		else
+			System.out.println("Endereco invalido!");
 	}
 	
 	public int getPCod() {
-		return PCod;
+		return pCod;
 	}
 	public void setPCod(int tipo) {
-		this.PCod = tipo;
+		if(tipo >= 0)
+			this.pCod = tipo;
+		else
+			System.out.println("Codigo invalido!");
 	}
 	public void apresentaPassageiro() {
 		int i;

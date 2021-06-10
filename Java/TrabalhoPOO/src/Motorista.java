@@ -1,62 +1,95 @@
 import java.util.Scanner;
 
-public class Motorista extends Metodos{
+public class Motorista extends Metodos {
 	
-	private double Cnh;
-	private Data dataAdimissao;
-	private String Nome;
-
+	private int mCnh; 
+	private Data mDataAdimissao;
+	private String mNome;
 	
 	public void cadastra(){
 		
 			String nome;
-			double Cnh;
-			int ano,mes,dia,hora,minuto;
+			int cnh;
 			Scanner sc = new Scanner(System.in);
 			
+			System.out.println("(1)Cadastrar um motorista");
+			
 			System.out.println("Digite o nome do motorista: ");
-			nome = sc.next();
+			nome = sc.nextLine();
 			this.setNome(nome);
 			
 			System.out.println("Digite o numero da CNH: ");
-			Cnh = sc.nextDouble();
-			this.setCnh(Cnh);
+			cnh = sc.nextInt();
+			this.setCnh(cnh);
 			
-			System.out.println("DATA DE ADIMISSAO");
-			System.out.println("Ano: ");
-			ano = sc.nextInt();
-			System.out.println("Mes: ");
-			mes = sc.nextInt();
-			System.out.println("Dia: ");
-			dia = sc.nextInt();
-			
+			System.out.println("DATA DE ADMISSAO");
+			System.out.print("Digite a data no formato dd mm aaaa: ");
+			int dia = sc.nextInt();
+			int mes = sc.nextInt();
+			int ano = sc.nextInt();
 			
 			Data data1 = new Data(dia,mes,ano);
 			this.setDataAdimissao(data1);
 			
-			System.out.println("O motorista "+ this.getNome() + " Foi cadastrado com sucesso");
+			System.out.println("O motorista "+ this.getNome() + " foi cadastrado com sucesso");
 			System.out.println("O motorista tem data de admissao em "+ this.getDataAdimissao().getData());
 	}
 	
-	public double getCnh() {
-		return Cnh;
+	public void alterar()
+	{
+		int op;
+		Scanner sc = new Scanner(System.in);
+		
+		do{
+		System.out.println("(2)Alterar um motorista");
+		System.out.println("\n1- CNH");
+		System.out.println("2- Nome");
+		System.out.println("Digite a opcao que deseja alterar: ");
+		op = sc.nextInt();
+		}while(op < 1 || op > 2);
+		
+		if(op == 1)
+		{
+			int cnh;
+			System.out.println("Digite o numero da CNH: ");
+			cnh = sc.nextInt();
+			this.setCnh(cnh);
+		}
+		
+		else
+		{
+			String nome;
+			System.out.println("Digite o nome: ");
+			nome = sc.NextLine();
+			this.setNome(nome);
+		}
+		
+		System.out.println("Alteracao salva com sucesso!");
 	}
-	public void setCnh(double cnh) {
-		Cnh = cnh;
+	
+	public int getCnh() {
+		return mCnh;
+	}
+	public void setCnh(int cnh) {
+		if(cnh > 0)
+			this.mCnh = cnh;
+		else
+			System.out.println("Numero da CNH invalido!");
 	}
 	public Data getDataAdimissao() {
-		return dataAdimissao;
+		return mDataAdimissao;
 	}
 	public void setDataAdimissao(Data dataAdimissao) {
-		this.dataAdimissao = dataAdimissao;
+		this.mDataAdimissao = dataAdimissao;
 	}
 	public String getNome() {
-		return Nome;
+		return mNome;
 	}
 	public void setNome(String nome) {
-		Nome = nome;
+		if(nome != "")
+			this.mNome = nome;
+		else
+			System.out.println("Nome invalido!");
 	}
-	
-	
 	
 }
