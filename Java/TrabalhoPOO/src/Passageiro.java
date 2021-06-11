@@ -5,7 +5,7 @@ public class Passageiro extends Metodos{
 	
 	Scanner sc = new Scanner(System.in);
 	
-	private int pRG;
+	private double pRG;
 	private Data pDataNsc;
 	private String pNome;
 	private String pEndereco;
@@ -17,7 +17,8 @@ public class Passageiro extends Metodos{
 	public void cadastra()
 	{
 		String nome, endereco, profissao;
-		int cod, rg;
+		int cod; 
+		double rg;
 		
 		System.out.println("\n\nDigite o codigo do passageiro: ");
 		cod = sc.nextInt();
@@ -28,7 +29,7 @@ public class Passageiro extends Metodos{
 		this.setPNome(nome);
 		
 		System.out.println("Digite o numero do RG: ");
-		rg = sc.nextInt();
+		rg = sc.nextDouble();
 		this.setPRG(rg);
 		
 		System.out.println("Digite o endereco do passageiro: ");
@@ -90,10 +91,10 @@ public class Passageiro extends Metodos{
 		System.out.println("Alteracao salva com sucesso!");
 	}
 	
-	public int getPRG() {
+	public double getPRG() {
 		return pRG;
 	}
-	public void setPRG(int rG) {
+	public void setPRG(double rG) {
 		if(rG > 0)
 			this.pRG = rG;
 		else

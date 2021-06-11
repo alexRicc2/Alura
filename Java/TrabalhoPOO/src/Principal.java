@@ -77,9 +77,8 @@ public static void main(String args[]) {
 							{
 								System.out.println("\nIndice do passageiro a ser alterado: ");
 								i = sc.nextInt(); 
-								for(int j=0; j<passageirosLista.size(); j++)
-								{
-									if(j == i)
+								
+									if(i < passageirosLista.size() && i > 0)
 									{
 										passageirosLista.get(i).alterar();
 									}
@@ -88,7 +87,7 @@ public static void main(String args[]) {
 									{
 										System.out.println("Desculpe, nao ha passageiros cadastrados com o codigo inserido!");
 									}
-								}
+					
 							
 							}
 							
@@ -97,9 +96,8 @@ public static void main(String args[]) {
 								System.out.println("Indice do passageiro a ser excluido: ");
 								i = sc.nextInt();
 								
-								for(int j=0; j<passageirosLista.size(); j++)
-								{
-									if(j == i)
+								
+									if(i < passageirosLista.size() && i > 0)
 									{
 										passageirosLista.remove(i);	
 										System.out.println("Passageiro excluido com sucesso!");
@@ -109,7 +107,7 @@ public static void main(String args[]) {
 									{
 										System.out.println("Desculpe, nao ha cadastros com o codigo inserido!");
 									}
-								}
+								
 							}
 							
 						}
@@ -149,9 +147,8 @@ public static void main(String args[]) {
 								System.out.println("\nIndice do onibus para a rota: ");
 								i = sc.nextInt();
 								
-								for(int j=0; j<onibusLista.size(); j++)
-								{
-									if(j == i)
+		
+									if(i < onibusLista.size() && i > 0)
 									{
 										r1.setOnibus(onibusLista.get(i));
 										rotasLista.add(r1);
@@ -163,7 +160,7 @@ public static void main(String args[]) {
 									{
 										System.out.println("Desculpe, nao ha onibus cadastrados com o codigo inserido!");
 									}
-								}	
+									
 							}
 						}
 						
@@ -180,9 +177,7 @@ public static void main(String args[]) {
 								System.out.println("Indice da rota a ser alterada: ");
 								i = sc.nextInt(); 
 							
-								for(int j=0; j<rotasLista.size(); j++)
-								{
-									if(j == i)
+									if(i < rotasLista.size() && i > 0)
 									{
 										rotasLista.get(i).alterar();
 									}
@@ -191,7 +186,7 @@ public static void main(String args[]) {
 									{
 										System.out.println("Desculpe, nao ha rotas cadastradas com o codigo inserido!");
 									}
-								}
+								
 							}
 							
 							else
@@ -199,9 +194,8 @@ public static void main(String args[]) {
 								System.out.println("Indice da rota a ser excluida: ");
 								i = sc.nextInt(); 
 							
-								for(int j=0; j<rotasLista.size(); j++)
-									{
-										if(j == i)
+						
+										if(i < rotasLista.size() && i > 0)
 										{
 											rotasLista.remove(i);	
 											System.out.println("Rota excluida com sucesso!");
@@ -211,7 +205,7 @@ public static void main(String args[]) {
 										{
 											System.out.println("Desculpe, nao ha rotas cadastradas com o codigo inserido!");
 										}
-									}
+									
 								
 							}
 						}
@@ -250,9 +244,8 @@ public static void main(String args[]) {
 								System.out.println("\nIndice do motorista para o Onibus: ");
 								i = sc.nextInt(); 
 								
-								for(int j=0; j<motoristaLista.size(); j++)
-								{
-									if(j == i)
+
+									if(i < motoristaLista.size() && i > 0)
 									{
 										o1.setMotorista(motoristaLista.get(i));
 										onibusLista.add(o1);
@@ -264,7 +257,7 @@ public static void main(String args[]) {
 									{
 										System.out.println("Desculpe, nao ha motoristas cadastrados com o codigo inserido!");
 									}
-								}			
+											
 							}
 						}
 						
@@ -279,9 +272,8 @@ public static void main(String args[]) {
 								System.out.println("\nIndice do Onibus a ser alterado: ");
 								i = sc.nextInt(); 
 								
-								for(int j=0; j<onibusLista.size(); j++)
-								{
-									if(j == i)
+	
+									if(i < onibusLista.size() && i > 0)
 									{
 										onibusLista.get(i).alterar();
 									}
@@ -290,7 +282,7 @@ public static void main(String args[]) {
 									{
 										System.out.println("\nDesculpe, nao ha onibus cadastrados com o codigo inserido!");
 									}
-								}
+								
 							}
 							
 							else
@@ -298,9 +290,8 @@ public static void main(String args[]) {
 								System.out.println("\nIndice do Onibus a ser excluido: ");
 								i = sc.nextInt(); 
 								
-								for(int j=0; j<onibusLista.size(); j++)
-									{
-										if(j == i)
+					
+										if(i < onibusLista.size() && i > 0)
 										{
 											onibusLista.remove(i);
 											System.out.println("Onibus excluido com sucesso!");
@@ -310,7 +301,7 @@ public static void main(String args[]) {
 										{
 											System.out.println("Desculpe, nao ha onibus cadastrados com o codigo inserido!");
 										}
-									}
+									
 								
 							}
 		
@@ -353,9 +344,8 @@ public static void main(String args[]) {
 								System.out.println("Indice do Motorista a ser alterado: ");
 								i = sc.nextInt(); 
 								
-								for(int j=0; j<motoristaLista.size(); j++)
-								{
-									if(j == i)
+							
+									if(i < motoristaLista.size() && i > 0)
 									{
 										motoristaLista.get(i).alterar();
 									}
@@ -364,7 +354,7 @@ public static void main(String args[]) {
 									{
 										System.out.println("Desculpe, nao ha motoristas com o codigo inserido!");
 									}
-								}
+								
 								
 							}
 							
@@ -373,9 +363,8 @@ public static void main(String args[]) {
 								System.out.println("\nIndice do Motorista a ser excluido: ");
 								i = sc.nextInt(); 
 								
-								for(int j=0; j<motoristaLista.size(); j++)
-								{
-									if(j == i)
+								
+									if(i < motoristaLista.size() && i > 0)
 									{
 										motoristaLista.remove(i);
 								
@@ -386,7 +375,7 @@ public static void main(String args[]) {
 									{
 										System.out.println("Desculpe, nao ha motoristas com o codigo inserido!");
 									}
-								}								
+																
 							}
 							
 							}
