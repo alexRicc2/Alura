@@ -18,10 +18,8 @@ public class Onibus extends Metodos
 		int anoF;
 		double kilometros;
 		
-		System.out.println("(1)Cadastrar um onibus");
-		
-		System.out.println("Modelo do onibus: ");
-		modelo = sc.nextLine();
+		System.out.println("\nModelo do onibus: ");
+		modelo = sc.next();
 		this.setModelo(modelo);
 				
 		System.out.println("Ano de fabricacao: ");
@@ -29,7 +27,7 @@ public class Onibus extends Metodos
 		this.setAnoFab(anoF);
 				
 		System.out.println("Marca do Onibus: ");
-		marca = sc.nextLine();
+		marca = sc.next();
 		this.setMarca(marca);
 				
 		System.out.println("Kilometragem do Onibus: ");
@@ -44,19 +42,18 @@ public class Onibus extends Metodos
 		Scanner sc = new Scanner(System.in);
 		
 		do{
-		System.out.println("(2)Alterar um onibus");
-		System.out.println("\n1- Modelo");
-		System.out.println("2- Marca");
-		System.out.println("3- Kilometragem");
-		System.out.println("Digite a opcao que deseja alterar: ");
-		op = sc.nextInt();
+			System.out.println("\n1- Modelo");
+			System.out.println("2- Marca");
+			System.out.println("3- Kilometragem");
+			System.out.println("Digite a opcao que deseja alterar: ");
+			op = sc.nextInt();
 		}while(op < 1 || op > 3);
 		
 		if(op == 1)
 		{
 			String Modelo;
 			System.out.println("Digite o modelo do onibus: ");
-			Modelo = sc.nextLine();
+			Modelo = sc.next();
 			this.setModelo(Modelo);
 		}
 		
@@ -64,7 +61,7 @@ public class Onibus extends Metodos
 		{
 			String Marca;
 			System.out.println("Digite a marca do onibus: ");
-			Marca = sc.nextLine();
+			Marca = sc.next();
 			this.setMarca(Marca);
 		}
 		
@@ -160,7 +157,7 @@ public class Onibus extends Metodos
 	public void exibirAssentos(){
 		
 		int i,j;
-		System.out.println("0 - Assento livre | 1 - Assento ocupado\n");
+		System.out.println("\n0 - Assento livre | 1 - Assento ocupado\n");
 		System.out.println("  0   1   2   3");
 		for(i=0; i<8; i++)
 		{
@@ -175,11 +172,4 @@ public class Onibus extends Metodos
 		} 
 		
 	}
-		/* Na main:
-		
-		objeto.exibirAssentos();
-		System.out.println("Digite as coordenadas do assento: "); -> Exemplo: 0 1, 2 0, 3 2, ...
-		Ler coordenadas e guardar em duas variaveis
-		objeto.setAssentos(var1, var2);
-		*/
 }

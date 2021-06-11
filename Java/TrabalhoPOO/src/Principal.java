@@ -1,3 +1,8 @@
+/* Autores: 
+		Alex Ricardo Rodrigues Sant'Anna
+		Sabrina de Oliveira Guizilini
+		Sarah de Oliveira Ferreira */
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -17,39 +22,41 @@ public static void main(String args[]) {
 		
 		while(opSistemas != 0) {
 			
-			//Colocar do while no menu
-			System.out.println("-------- Viacao Asteroide -------\n\nMenu Principal:");
-			System.out.println("\n1 - Sistema de Cadastros, Alteracao e Exclusao");
-			System.out.println("2 - Mostrar cadastros");
-			System.out.println("3 - Comprar Passagens");
-			System.out.println("0 - Sair");
-			System.out.println("Sua escolha: ");
-			opSistemas = sc.nextInt();
+			do{
+				System.out.println("\n\n-------- Viacao Asteroide --------\n\nMenu Principal:");
+				System.out.println("\n1 - Sistema de Cadastros, Alteracao e Exclusao");
+				System.out.println("2 - Mostrar cadastros");
+				System.out.println("3 - Comprar Passagens");
+				System.out.println("0 - Sair");
+				System.out.println("Sua escolha: ");
+				opSistemas = sc.nextInt();
+			} while(opSistemas < 0 || opSistemas > 3);
 			
 			if(opSistemas == 1) {
 				
 				while(op != 0) {
 					
-					//Colocar do while no menu
-					System.out.println("\nSistema de Cadastros, Alteracao e Exclusao");
-					System.out.println("(1)Passageiro");
-					System.out.println("(2)Rota");
-					System.out.println("(3)Onibus");
-					System.out.println("(4)Motorista");
-					System.out.println("(0)Sair do Sistema de Cadastros, Alteracao e Exclusao");
-					System.out.println("Sua escolha: ");
-					op = sc.nextInt();
+					do{
+						System.out.println("\nSistema de Cadastros, Alteracao e Exclusao");
+						System.out.println("(1)Passageiro");
+						System.out.println("(2)Motorista");
+						System.out.println("(3)Onibus");
+						System.out.println("(4)Rotas");
+						System.out.println("(0) Voltar para Menu Principal");
+						System.out.println("Sua escolha: ");
+						op = sc.nextInt();
+					} while (op < 0 || op > 4);
 					
 					
 					if(op == 1){ //Passageiros
 						
 						do{
-						System.out.println("\n(1)Cadastrar um Passageiro");
-						System.out.println("(2)Alterar um Passageiro");
-						System.out.println("(3)Excluir um Passageiro");
-						System.out.println("Sua escolha: ");
-						decisao = sc.nextInt();
-						}while(decisao < 1 || decisao > 3);
+							System.out.println("\n(1)Cadastrar um Passageiro");
+							System.out.println("(2)Alterar um Passageiro");
+							System.out.println("(3)Excluir um Passageiro");
+							System.out.println("Sua escolha: ");
+							decisao = sc.nextInt();
+						} while(decisao < 1 || decisao > 3);
 						
 						if(decisao == 1) {
 							Passageiro p1 = new Passageiro();
@@ -59,43 +66,71 @@ public static void main(String args[]) {
 						
 						else {
 							
-							System.out.println("Ha "+ passageirosLista.size() +" passageiros cadastrados");
+							if(passageirosLista.size() != 0){
+							
+							System.out.println("\nHa "+ passageirosLista.size() +" passageiro(s) cadastrado(s)");
 							for(i=0;i<passageirosLista.size();i++) {
-								System.out.println(i+": ");
-								passageirosLista.get(i).apresentaPassageiro();
-								
+								passageirosLista.get(i).apresentaPassageiro(i);								
 							}
 							
 							if(decisao == 2)
 							{
-								System.out.println("Numero do passageiro a ser alterado: ");
-								i = sc.nextInt(); //Conferir se o i é valido
-								
-								passageirosLista.get(i).alterar();
+								System.out.println("\nIndice do passageiro a ser alterado: ");
+								i = sc.nextInt(); 
+								for(int j=0; j<passageirosLista.size(); j++)
+								{
+									if(j == i)
+									{
+										passageirosLista.get(i).alterar();
+									}
+									
+									else
+									{
+										System.out.println("Desculpe, nao ha passageiros cadastrados com o codigo inserido!");
+									}
+								}
+							
 							}
 							
 							else
 							{
-								System.out.println("(3)Excluir um Passageiro");
-								System.out.println("Numero do passageiro a ser excluido: ");
-								i = sc.nextInt(); //Conferir se o i é valido
-							
-								passageirosLista.remove(i);	
-								System.out.println("Passageiro excluido com sucesso!");
+								System.out.println("Indice do passageiro a ser excluido: ");
+								i = sc.nextInt();
+								
+								for(int j=0; j<passageirosLista.size(); j++)
+								{
+									if(j == i)
+									{
+										passageirosLista.remove(i);	
+										System.out.println("Passageiro excluido com sucesso!");
+									}
+									
+									else
+									{
+										System.out.println("Desculpe, nao ha cadastros com o codigo inserido!");
+									}
+								}
 							}
 							
 						}
+						
+						
+						else
+						{
+							System.out.println("Nao ha passageiros cadastrados no sistema.");
+						}
+						}
 					}
 					
-					if(op == 2){ //Rotas, necessario um onibus
+					if(op == 4){ //Rotas, necessario um onibus
 					
 						do{
-						System.out.println("\n(1)Cadastrar uma Rota");
-						System.out.println("(2)Alterar uma Rota");
-						System.out.println("(3)Excluir uma Rota");
-						System.out.println("Sua escolha: ");
-						decisao = sc.nextInt();
-						}while(decisao < 1 || decisao > 3);
+							System.out.println("\n(1)Cadastrar uma Rota");
+							System.out.println("(2)Alterar uma Rota");
+							System.out.println("(3)Excluir uma Rota");
+							System.out.println("Sua escolha: ");
+							decisao = sc.nextInt();
+						} while(decisao < 1 || decisao > 3);
 						
 						if(decisao == 1 ) {
 							if(onibusLista.isEmpty()) {
@@ -106,62 +141,97 @@ public static void main(String args[]) {
 								Rotas r1 = new Rotas();
 								
 								r1.cadastra();
-								System.out.println("Onibus disponiveis para esta rota: ");
+								System.out.println("\n\tOnibus disponiveis para esta rota: ");
 								
 								for(i=0;i<onibusLista.size();i++) {
-										System.out.println("Onibus indice[" + i + "] " + onibusLista.get(i).getModelo());
+										System.out.println("\n\tOnibus indice[" + i + "] - Modelo: " + onibusLista.get(i).getModelo());
 									}
-								System.out.println("\nNumero do onibus para a rota: ");
-								i = sc.nextInt(); //Conferir se o i é valido
+								System.out.println("\nIndice do onibus para a rota: ");
+								i = sc.nextInt();
 								
-								r1.setOnibus(onibusLista.get(i));
+								for(int j=0; j<onibusLista.size(); j++)
+								{
+									if(j == i)
+									{
+										r1.setOnibus(onibusLista.get(i));
+										rotasLista.add(r1);
 								
-								rotasLista.add(r1);
-								
-								System.out.println("Cadastro da rota para "+ r1.getRdestino() +" foi cadastrada com sucesso!");
-								
+										System.out.println("A rota para "+ r1.getRdestino() +" foi cadastrada com sucesso!");
+									}
+									
+									else
+									{
+										System.out.println("Desculpe, nao ha onibus cadastrados com o codigo inserido!");
+									}
+								}	
 							}
 						}
 						
 						else {
+							if(rotasLista.size() != 0){
 							
-							System.out.println("Ha "+ rotasLista.size() +" rotas cadastradas");
+							System.out.println("\nHa "+ rotasLista.size() +" rota(s) cadastrada(s)");
 							for(i=0;i<rotasLista.size();i++) {
-								System.out.println(i+": ");
-								rotasLista.get(i).exibeRotas();
-								
+								rotasLista.get(i).exibeRotas(i);
 							}
 							
 							if(decisao == 2)
 							{
-								System.out.println("Numero da rota a ser alterada: ");
-								i = sc.nextInt(); //Conferir se o i é valido
-								
-								rotasLista.get(i).alterar();
+								System.out.println("Indice da rota a ser alterada: ");
+								i = sc.nextInt(); 
+							
+								for(int j=0; j<rotasLista.size(); j++)
+								{
+									if(j == i)
+									{
+										rotasLista.get(i).alterar();
+									}
+									
+									else
+									{
+										System.out.println("Desculpe, nao ha rotas cadastradas com o codigo inserido!");
+									}
+								}
 							}
 							
 							else
 							{
-								System.out.println("(3)Excluir uma Rota");
-								System.out.println("Numero da rota a ser excluida: ");
-								i = sc.nextInt(); //Conferir se o i é valido
+								System.out.println("Indice da rota a ser excluida: ");
+								i = sc.nextInt(); 
 							
-								rotasLista.remove(i);	
-								System.out.println("Rota excluida com sucesso!");
+								for(int j=0; j<rotasLista.size(); j++)
+									{
+										if(j == i)
+										{
+											rotasLista.remove(i);	
+											System.out.println("Rota excluida com sucesso!");
+										}
+										
+										else
+										{
+											System.out.println("Desculpe, nao ha rotas cadastradas com o codigo inserido!");
+										}
+									}
+								
 							}
+						}
 							
+						else
+						{
+							System.out.println("Nao ha rotas cadastradas no sistema.");
 						}
 					}
+				}
 					
 					if(op == 3) { //Onibus, necessario um motorista
 					
 						do{
-						System.out.println("\n(1)Cadastrar um Onibus");
-						System.out.println("(2)Alterar um Onibus");
-						System.out.println("(3)Excluir um Onibus");
-						System.out.println("Sua escolha: ");
-						decisao = sc.nextInt();
-						}while(decisao < 1 || decisao > 3);
+							System.out.println("\n(1)Cadastrar um Onibus");
+							System.out.println("(2)Alterar um Onibus");
+							System.out.println("(3)Excluir um Onibus");
+							System.out.println("Sua escolha: ");
+							decisao = sc.nextInt();
+						} while(decisao < 1 || decisao > 3);
 						
 						if(decisao == 1) { //cadastra onibus
 							
@@ -172,59 +242,97 @@ public static void main(String args[]) {
 								Onibus o1 = new Onibus();
 								o1.cadastra();
 								
-								System.out.println("Motoristas disponiveis para este onibus: ");
+								System.out.println("\n\tMotoristas disponiveis para este onibus: ");
 								
 								for(i=0;i<motoristaLista.size();i++) {
-									System.out.println("Motorista indice[" + i + "] " + motoristaLista.get(i).getNome());
+									System.out.println("\tMotorista indice[" + i + "] - Nome: " + motoristaLista.get(i).getNome());
 								}
-								System.out.println("\nNumero do motorista para o Onibus: ");
-								i = sc.nextInt(); //Conferir se o i é valido
-								o1.setMotorista(motoristaLista.get(i));
-								onibusLista.add(o1);
+								System.out.println("\nIndice do motorista para o Onibus: ");
+								i = sc.nextInt(); 
 								
-								System.out.println("Onibus de modelo: "+ o1.getModelo()+ "foi cadastrado com sucesso!");
+								for(int j=0; j<motoristaLista.size(); j++)
+								{
+									if(j == i)
+									{
+										o1.setMotorista(motoristaLista.get(i));
+										onibusLista.add(o1);
 								
+										System.out.println("\nOnibus de modelo: "+ o1.getModelo()+ " foi cadastrado com sucesso!");
+									}
+									
+									else
+									{
+										System.out.println("Desculpe, nao ha motoristas cadastrados com o codigo inserido!");
+									}
+								}			
 							}
 						}
 						
 						else{
-							
+							if(onibusLista.size() != 0){
 							for(i=0;i<onibusLista.size();i++) {
-								System.out.println("Onibus " + i + " " + onibusLista.get(i).getModelo());
+								System.out.println("\n["+i+"] - Onibus " + onibusLista.get(i).getModelo());
 							}
 							
 							if(decisao == 2)
 							{
-								System.out.println("Numero do Onibus a ser alterado: ");
-								i = sc.nextInt(); //Conferir se o i é valido
+								System.out.println("\nIndice do Onibus a ser alterado: ");
+								i = sc.nextInt(); 
 								
-								onibusLista.get(i).alterar();
+								for(int j=0; j<onibusLista.size(); j++)
+								{
+									if(j == i)
+									{
+										onibusLista.get(i).alterar();
+									}
+									
+									else
+									{
+										System.out.println("\nDesculpe, nao ha onibus cadastrados com o codigo inserido!");
+									}
+								}
 							}
 							
 							else
 							{
-								System.out.println("(3)Excluir um Onibus");
-								System.out.println("\nNumero do Onibus a ser excluido: ");
-								i = sc.nextInt(); //Conferir se o i é valido
+								System.out.println("\nIndice do Onibus a ser excluido: ");
+								i = sc.nextInt(); 
 								
-								onibusLista.remove(i);
-								
-								System.out.println("Onibus excluido com sucesso!");
+								for(int j=0; j<onibusLista.size(); j++)
+									{
+										if(j == i)
+										{
+											onibusLista.remove(i);
+											System.out.println("Onibus excluido com sucesso!");
+										}
+										
+										else
+										{
+											System.out.println("Desculpe, nao ha onibus cadastrados com o codigo inserido!");
+										}
+									}
 								
 							}
 		
 						}
+						else
+						{
+							System.out.println("Nao ha onibus cadastrados no sistema.");
+						}
+						
+						}
+						
 					
 					}
 					
-					if(op == 4) { //Motorista
+					if(op == 2) { //Motorista
 						
 						do{
-						System.out.println("\n(1)Cadastrar um Motorista");
-						System.out.println("(2)Alterar um Motorista");
-						System.out.println("(3)Excluir um Motorista");
-						System.out.println("Sua escolha: ");
-						decisao = sc.nextInt();
+							System.out.println("\n(1)Cadastrar um Motorista");
+							System.out.println("(2)Alterar um Motorista");
+							System.out.println("(3)Excluir um Motorista");
+							System.out.println("Sua escolha: ");
+							decisao = sc.nextInt();
 						}while(decisao < 1 || decisao > 3);
 						
 						if(decisao == 1){
@@ -235,50 +343,81 @@ public static void main(String args[]) {
 						}
 						
 						else {
-							
+							if(motoristaLista.size() != 0){
 							for(i=0;i<motoristaLista.size();i++) {
-								System.out.println("Motorista " + i + " " + motoristaLista.get(i).getNome());
+								System.out.println("["+i+"] - Motorista " + motoristaLista.get(i).getNome());
 							}
 							
 							if(decisao == 2)
 							{
-								System.out.println("Numero do Motorista a ser alterado: ");
-								i = sc.nextInt(); //Conferir se o i é valido
+								System.out.println("Indice do Motorista a ser alterado: ");
+								i = sc.nextInt(); 
 								
-								motoristaLista.get(i).alterar();
+								for(int j=0; j<motoristaLista.size(); j++)
+								{
+									if(j == i)
+									{
+										motoristaLista.get(i).alterar();
+									}
+									
+									else
+									{
+										System.out.println("Desculpe, nao ha motoristas com o codigo inserido!");
+									}
+								}
+								
 							}
 							
 							else
 							{
-								System.out.println("(3)Excluir um Motorista");
-								System.out.println("\nNumero do Motorista a ser excluido: ");
-								i = sc.nextInt(); //Conferir se o i é valido
+								System.out.println("\nIndice do Motorista a ser excluido: ");
+								i = sc.nextInt(); 
 								
-								motoristaLista.remove(i);
+								for(int j=0; j<motoristaLista.size(); j++)
+								{
+									if(j == i)
+									{
+										motoristaLista.remove(i);
 								
-								System.out.println("Motorista excluido com sucesso!");
-								
+										System.out.println("Motorista excluido com sucesso!");
+									}
+									
+									else
+									{
+										System.out.println("Desculpe, nao ha motoristas com o codigo inserido!");
+									}
+								}								
 							}
 							
+							}
+						
+							else
+							{
+								System.out.println("Nao ha motoristas cadastrados no sistema.");
+							}
 						}
 					}
 					
-				  }
-			    }
+				
+				
+				} 
+			}
+		
 				
 			if(opSistemas == 2) { //Mostra os cadastros
 				
-				//Colocar do while no menu
-				System.out.println("\n1- Lista de passageiros");
-				System.out.println("2- Lista de rotas");
-				System.out.println("3- Lista de onibus");
-				System.out.println("4- Lista de motorista");
-				System.out.println("Sua escolha: ");
-				op = sc.nextInt();
-				
+				do{
+					System.out.println("\nMostrar Cadastros");
+					System.out.println("1- Lista de passageiros");
+					System.out.println("2- Lista de rotas");
+					System.out.println("3- Lista de onibus");
+					System.out.println("4- Lista de motorista");
+					System.out.println("Sua escolha: ");
+					op = sc.nextInt();
+				} while (op < 0 || op > 4);
 				
 				if(op == 1) {
-					System.out.println("Ha "+ passageirosLista.size() +" passageiros cadastrados");
+					System.out.println("\nHa "+ passageirosLista.size() +" passageiro(s) cadastrado(s)");
 					for(i=0;i<passageirosLista.size();i++) {
 						passageirosLista.get(i).apresentaPassageiro();
 					
@@ -286,7 +425,7 @@ public static void main(String args[]) {
 				}
 				
 				if(op == 2) {
-					System.out.println("Ha "+ rotasLista.size() +" rotas cadastrados");
+					System.out.println("\nHa "+ rotasLista.size() +" rota(s) cadastrada(s)");
 					for(i=0;i<rotasLista.size();i++) {
 						System.out.println(i+1);
 						rotasLista.get(i).exibeRotas();
@@ -295,7 +434,7 @@ public static void main(String args[]) {
 				
 				if(op == 3) {
 				
-					System.out.println("Ha "+ onibusLista.size() +" onibus cadastrados");
+					System.out.println("\nHa "+ onibusLista.size() +" onibus cadastrado(s)");
 					for(i=0;i<onibusLista.size();i++) {
 						System.out.println(i+1 + "- "+ onibusLista.get(i).getModelo());
 						onibusLista.get(i).exibirAssentos();
@@ -304,7 +443,7 @@ public static void main(String args[]) {
 				
 				if(op == 4) {
 					
-					System.out.println("Ha "+ motoristaLista.size() +" motoristas cadastrados");
+					System.out.println("\nHa "+ motoristaLista.size() +" motorista(s) cadastrado(s)");
 					for(i=0;i<motoristaLista.size();i++) {
 						System.out.println(i+1 + "- "+ motoristaLista.get(i).getNome());
 					}
@@ -312,39 +451,70 @@ public static void main(String args[]) {
 			}
 			
 			if(opSistemas == 3){ //Compra passagens
+			
+				System.out.println("\nComprar Passagens");
+			
+				if(rotasLista.size() != 0 && passageirosLista.size() != 0) {
 				
 				int posPassageiro,posRota,j,x,y;
 				
-				System.out.println("Escolha o passageiro que ira comprar a passagem");
+				System.out.println("\nEscolha o passageiro que ira comprar a passagem");
 				for(i=0;i<passageirosLista.size();i++){
-					System.out.println(i + " - " + passageirosLista.get(i).getPNome());	
+				System.out.println("[" + i + "] " + passageirosLista.get(i).getPNome());	
 				}
 				
-				System.out.println("Digite a posicao do passageiro desejado: ");
+				System.out.println("\nDigite o indice do passageiro desejado: ");
+				posPassageiro = sc.nextInt(); 
 				
-				posPassageiro = sc.nextInt(); //Conferir se é valido
+				for(int aux=0; aux<passageirosLista.size(); aux++)
+				{
+					if(aux == posPassageiro)
+					{
+						System.out.println("\nEscolha a rota que ira comprar");
 				
-				System.out.println("Escolha a rota que ira comprar");
+						for(j=0;j<rotasLista.size();j++){
+							//System.out.println("Rota "+j);
+							rotasLista.get(j).exibeRotas(j);
+						}
+						posRota = sc.nextInt(); 
+						
+						for(int aux1=0; aux1<rotasLista.size(); aux1++)
+								{
+									if(aux1 == posRota)
+									{
+										System.out.println("Escolha seu assento no onibus");
+										rotasLista.get(posRota).getOnibus().exibirAssentos();
+										System.out.println("\nDigite as coordenadas do assento Ex.: 7 2: "); //-> Exemplo: 0 1, 2 0, 3 2, ...
+										x = sc.nextInt(); 
+										y = sc.nextInt(); 
+										
+										rotasLista.get(posRota).getOnibus().setAssentos(x,y); //marca que ocupou o assento
+										
+										
+										passageirosLista.get(posPassageiro).setPassagens(rotasLista.get(posRota)); //adiciona a rota na lista de passagens do passageiro
+
+									}
+									
+									else
+									{
+										System.out.println("Desculpe, nao ha rotas cadastradas com o codigo inserido!");
+									}
+								}		
+						
+					}									
+					else
+					{
+						System.out.println("Desculpe, nao ha passageiros cadastrados com o codigo inserido!");
+					}
+				}			
 				
-				for(j=0;j<rotasLista.size();j++){
-					System.out.println("Rota "+j);
-					rotasLista.get(j).exibeRotas();
-				}
-				posRota = sc.nextInt(); //Conferir se é valido
-				
-				System.out.println("Escolha seu assento no onibus");
-				rotasLista.get(posRota).getOnibus().exibirAssentos();
-				System.out.println("Digite as coordenadas do assento Ex.: 7 2: "); //-> Exemplo: 0 1, 2 0, 3 2, ...
-				x = sc.nextInt(); 
-				y = sc.nextInt(); 
-				
-				rotasLista.get(posRota).getOnibus().setAssentos(x,y); //marca que ocupou o assento
-				
-				
-				passageirosLista.get(posPassageiro).setPassagens(rotasLista.get(posRota)); //adiciona a rota na lista de passagens do passageiro
-				
-			
 			}
-	}
-  }
-}
+			
+			else{
+				System.out.println("\nNao ha cadastros suficientes para realizar a compra de passagens.");
+			}
+			}
+			
+			}   
+			} 
+		} 

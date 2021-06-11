@@ -1,3 +1,4 @@
+  
 public class Data
 {
 	private String dataFormatada;

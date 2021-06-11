@@ -19,14 +19,12 @@ public class Passageiro extends Metodos{
 		String nome, endereco, profissao;
 		int cod, rg;
 		
-		System.out.println("(1)Cadastrar um passageiro");
-		
 		System.out.println("\n\nDigite o codigo do passageiro: ");
 		cod = sc.nextInt();
 		this.setPCod(cod);
 		
 		System.out.println("Digite o nome do passageiro: ");
-		nome = sc.nextLine();
+		nome = sc.next();
 		this.setPNome(nome);
 		
 		System.out.println("Digite o numero do RG: ");
@@ -34,15 +32,14 @@ public class Passageiro extends Metodos{
 		this.setPRG(rg);
 		
 		System.out.println("Digite o endereco do passageiro: ");
-		endereco = sc.nextLine();
+		endereco = sc.next();
 		this.setPEndereco(endereco);
 		
 		System.out.println("Digite a profissao do passageiro: ");
-		profissao = sc.nextLine();
+		profissao = sc.next();
 		this.setPProfissao(profissao);
 		
-		System.out.println("Data de Nascimento");
-		System.out.print("Digite a data no formato dd mm aaaa: ");
+		System.out.print("Digite a data de nascimento no formato dd mm aaaa: ");
 		int dia = sc.nextInt();
 		int mes = sc.nextInt();
 		int ano = sc.nextInt();
@@ -50,7 +47,7 @@ public class Passageiro extends Metodos{
 		Data data = new Data(dia,mes,ano);
 		this.setPDataNsc(data);
 											
-		System.out.println("O passageiro "+ getPNome() + " foi cadastrado com sucesso");
+		System.out.println("\nO(a) passageiro(a) "+ getPNome() + " foi cadastrado(a) com sucesso!");
 	}
 	
 	public void alterar()
@@ -59,7 +56,6 @@ public class Passageiro extends Metodos{
 		Scanner sc = new Scanner(System.in);
 		
 		do{
-			System.out.println("(2)Alterar um passageiro");
 			System.out.println("\n1- Nome");
 			System.out.println("2- Endereco");
 			System.out.println("3- Profissao");
@@ -71,7 +67,7 @@ public class Passageiro extends Metodos{
 		{
 			String nome;
 			System.out.println("Digite o nome do passageiro: ");
-			nome = sc.nextLine();
+			nome = sc.next();
 			this.setPNome(nome);
 		}
 		
@@ -79,7 +75,7 @@ public class Passageiro extends Metodos{
 		{
 			String endereco;
 			System.out.println("Digite o endereco do passageiro: ");
-			endereco = sc.nextLine();
+			endereco = sc.next();
 			this.setPEndereco(endereco);
 		}
 		
@@ -87,7 +83,7 @@ public class Passageiro extends Metodos{
 		{
 			String profissao;
 			System.out.println("Digite a profissao do passageiro: ");
-			profissao = sc.nextLine();
+			profissao = sc.next();
 			this.setPProfissao(profissao);
 		}
 		
@@ -98,7 +94,7 @@ public class Passageiro extends Metodos{
 		return pRG;
 	}
 	public void setPRG(int rG) {
-		if(rg > 0)
+		if(rG > 0)
 			this.pRG = rG;
 		else
 			System.out.println("RG Invalido!");
@@ -152,13 +148,24 @@ public class Passageiro extends Metodos{
 	}
 	public void apresentaPassageiro() {
 		int i;
-		System.out.println("Passageiro " + this.getPNome() + " Possui "+ passagens.size() +" passagens");
+		System.out.println(" Passageiro " + this.getPNome() + " Possui "+ passagens.size() +" passagens");
 		for(i=0;i<passagens.size();i++) {
 			passagens.get(i).exibeRotas();
 			
 		}
 		
 	}
+	
+	public void apresentaPassageiro(int j) {
+		int i;
+		System.out.println("[" + j+ "]" + " Passageiro " + this.getPNome() + " Possui "+ passagens.size() +" passagens");
+		for(i=0;i<passagens.size();i++) {
+			passagens.get(i).exibeRotas();
+			
+		}
+		
+	}
+	
 	public void setPassagens(Rotas passagem){
 		this.passagens.add(passagem);
 		System.out.println("Passagem para " + passagem.getRdestino()+ " comprada!");

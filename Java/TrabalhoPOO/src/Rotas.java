@@ -17,45 +17,41 @@ public class Rotas extends Metodos{
 		
 		Scanner sc = new Scanner(System.in);
 		int origem, p1, p2, p3, destino;
-		double Valor;
+		double Valor;		
 		
-		System.out.println("(1)Cadastrar uma rota");
+		System.out.println("\n\n01 - Sao Jose do Rio Preto");
+		System.out.println("02 - Olimpia");
+		System.out.println("03 - Sao Paulo");
+		System.out.println("04 - Mirassol");
+		System.out.println("05 - Votuporanga");
 		
-		
-		System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
-		System.out.println("Numero cidade Origem: ");
+		System.out.println("\n\nNumero cidade Origem: ");
 		origem = sc.nextInt();
 		this.setROrigem(origem);
 		
-		System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
 		System.out.println("Numero da primeira parada: ");
 		p1 = sc.nextInt();
 		this.setRParada1(p1);
 		
-		System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
 		System.out.println("Numero da segunda  parada: ");
 		p2 = sc.nextInt();
 		this.setRParada2(p2);
 		
-		System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
 		System.out.println("Numero da terceira parada: ");
 		p3 = sc.nextInt();
 		this.setRParada3(p3);
 		
-		System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
 		System.out.println("Numero cidade Destino: ");
 		destino = sc.nextInt();
 		this.setRdestino(destino);
 		
-		System.out.println("Horario de saida: ");
-		System.out.print("Digite o horario no formato hh mm: ");
+		System.out.print("Digite o horario de saida no formato hh mm: ");
 		int h1 = sc.nextInt();
 		int m1 = sc.nextInt();
 		Hora hSaida = new Hora(h1,m1);
 		this.setHoraIda(hSaida);
 		
-		System.out.println("Horario de chegada: ");
-		System.out.print("Digite o horario no formato hh mm: ");
+		System.out.print("Digite o horario de chegada no formato hh mm: ");
 		int h2 = sc.nextInt();
 		int m2 = sc.nextInt();
 		Hora hChegada = new Hora(h2,m2);
@@ -73,7 +69,6 @@ public class Rotas extends Metodos{
 		Scanner sc = new Scanner(System.in);
 		
 		do{
-			System.out.println("(2)Alterar uma rota");
 			System.out.println("\n1- Parada 1");
 			System.out.println("2- Parada 2");
 			System.out.println("3- Parada 3");
@@ -84,10 +79,18 @@ public class Rotas extends Metodos{
 			op = sc.nextInt();
 		}while(op < 1 || op > 6);
 		
+		if(op >= 1 && op <=4)
+		{
+			System.out.println("\n\n01 - Sao Jose do Rio Preto");
+			System.out.println("02 - Olimpia");
+			System.out.println("03 - Sao Paulo");
+			System.out.println("04 - Mirassol");
+			System.out.println("05 - Votuporanga");
+		}
+		
 		if(op == 1)
 		{
 			int p1;
-			System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
 			System.out.println("Numero da primeira parada: ");
 			p1 = sc.nextInt();
 			this.setRParada1(p1);
@@ -96,7 +99,6 @@ public class Rotas extends Metodos{
 		else if(op == 2)
 		{
 			int p2;
-			System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
 			System.out.println("Numero da segunda  parada: ");
 			p2 = sc.nextInt();
 			this.setRParada2(p2);
@@ -105,7 +107,6 @@ public class Rotas extends Metodos{
 		else if(op == 3)
 		{
 			int p3;
-			System.out.println("1- RP; 2-Olimpia; 3- SP; 4-Mirassol; 5- Votuporanga");
 			System.out.println("Numero da terceira parada: ");
 			p3 = sc.nextInt();
 			this.setRParada3(p3);
@@ -297,9 +298,13 @@ public class Rotas extends Metodos{
 			System.out.println("Valor invalido!");
 	}
 	
-	public void exibeRotas(){
-		System.out.println("Origem: " + this.getROrigem() + " Destino: "+ this.getRdestino() + " Hora de saida: "+ this.getHoraIda().getHora() + " Hora de chegada: "+ this.getHoraChegada().getHora() +
-		" Valor da passagem: " + this.getValor());
+	public void exibeRotas(int j){
+		System.out.println("[" + j+ "] - Origem: " + this.getROrigem() + " - Destino: "+ this.getRdestino() + " - Hora de saida: "+ this.getHoraIda().getHora() + " - Hora de chegada: "+ this.getHoraChegada().getHora() +
+		" - Valor da passagem: R$" + this.getValor());
 	}
 	
+	public void exibeRotas(){
+		System.out.println("Origem: " + this.getROrigem() + " - Destino: "+ this.getRdestino() + " - Hora de saida: "+ this.getHoraIda().getHora() + " - Hora de chegada: "+ this.getHoraChegada().getHora() +
+		" - Valor da passagem: R$" + this.getValor());
+	}
 }

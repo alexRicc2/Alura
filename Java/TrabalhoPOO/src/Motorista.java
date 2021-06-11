@@ -12,18 +12,15 @@ public class Motorista extends Metodos {
 			int cnh;
 			Scanner sc = new Scanner(System.in);
 			
-			System.out.println("(1)Cadastrar um motorista");
-			
-			System.out.println("Digite o nome do motorista: ");
-			nome = sc.nextLine();
+			System.out.println("\nDigite o nome do motorista: ");
+			nome = sc.next();
 			this.setNome(nome);
 			
 			System.out.println("Digite o numero da CNH: ");
 			cnh = sc.nextInt();
 			this.setCnh(cnh);
 			
-			System.out.println("DATA DE ADMISSAO");
-			System.out.print("Digite a data no formato dd mm aaaa: ");
+			System.out.print("Digite a data de admissao no formato dd mm aaaa: ");
 			int dia = sc.nextInt();
 			int mes = sc.nextInt();
 			int ano = sc.nextInt();
@@ -31,8 +28,8 @@ public class Motorista extends Metodos {
 			Data data1 = new Data(dia,mes,ano);
 			this.setDataAdimissao(data1);
 			
-			System.out.println("O motorista "+ this.getNome() + " foi cadastrado com sucesso");
-			System.out.println("O motorista tem data de admissao em "+ this.getDataAdimissao().getData());
+			System.out.println("\nO(a) motorista "+ this.getNome() + " foi cadastrado(a) com sucesso!");
+			System.out.println("O(a) motorista tem data de admissao em "+ this.getDataAdimissao().getData());
 	}
 	
 	public void alterar()
@@ -41,11 +38,10 @@ public class Motorista extends Metodos {
 		Scanner sc = new Scanner(System.in);
 		
 		do{
-		System.out.println("(2)Alterar um motorista");
-		System.out.println("\n1- CNH");
-		System.out.println("2- Nome");
-		System.out.println("Digite a opcao que deseja alterar: ");
-		op = sc.nextInt();
+			System.out.println("\n1- CNH");
+			System.out.println("2- Nome");
+			System.out.println("Digite a opcao que deseja alterar: ");
+			op = sc.nextInt();
 		}while(op < 1 || op > 2);
 		
 		if(op == 1)
@@ -60,7 +56,7 @@ public class Motorista extends Metodos {
 		{
 			String nome;
 			System.out.println("Digite o nome: ");
-			nome = sc.NextLine();
+			nome = sc.next();
 			this.setNome(nome);
 		}
 		
