@@ -78,7 +78,7 @@ public static void main(String args[]) {
 								System.out.println("\nIndice do passageiro a ser alterado: ");
 								i = sc.nextInt(); 
 								
-									if(i < passageirosLista.size() && i > 0)
+									if(i < passageirosLista.size() && i >= 0)
 									{
 										passageirosLista.get(i).alterar();
 									}
@@ -97,7 +97,7 @@ public static void main(String args[]) {
 								i = sc.nextInt();
 								
 								
-									if(i < passageirosLista.size() && i > 0)
+									if(i < passageirosLista.size() && i >= 0)
 									{
 										passageirosLista.remove(i);	
 										System.out.println("Passageiro excluido com sucesso!");
@@ -148,7 +148,7 @@ public static void main(String args[]) {
 								i = sc.nextInt();
 								
 		
-									if(i < onibusLista.size() && i > 0)
+									if(i < onibusLista.size() && i >= 0)
 									{
 										r1.setOnibus(onibusLista.get(i));
 										rotasLista.add(r1);
@@ -177,7 +177,7 @@ public static void main(String args[]) {
 								System.out.println("Indice da rota a ser alterada: ");
 								i = sc.nextInt(); 
 							
-									if(i < rotasLista.size() && i > 0)
+									if(i < rotasLista.size() && i >= 0)
 									{
 										rotasLista.get(i).alterar();
 									}
@@ -195,7 +195,7 @@ public static void main(String args[]) {
 								i = sc.nextInt(); 
 							
 						
-										if(i < rotasLista.size() && i > 0)
+										if(i < rotasLista.size() && i >= 0)
 										{
 											rotasLista.remove(i);	
 											System.out.println("Rota excluida com sucesso!");
@@ -245,7 +245,7 @@ public static void main(String args[]) {
 								i = sc.nextInt(); 
 								
 
-									if(i < motoristaLista.size() && i > 0)
+									if(i < motoristaLista.size() && i >= 0)
 									{
 										o1.setMotorista(motoristaLista.get(i));
 										onibusLista.add(o1);
@@ -273,7 +273,7 @@ public static void main(String args[]) {
 								i = sc.nextInt(); 
 								
 	
-									if(i < onibusLista.size() && i > 0)
+									if(i < onibusLista.size() && i >= 0)
 									{
 										onibusLista.get(i).alterar();
 									}
@@ -291,7 +291,7 @@ public static void main(String args[]) {
 								i = sc.nextInt(); 
 								
 					
-										if(i < onibusLista.size() && i > 0)
+										if(i < onibusLista.size() && i >= 0)
 										{
 											onibusLista.remove(i);
 											System.out.println("Onibus excluido com sucesso!");
@@ -345,7 +345,7 @@ public static void main(String args[]) {
 								i = sc.nextInt(); 
 								
 							
-									if(i < motoristaLista.size() && i > 0)
+									if(i < motoristaLista.size() && i >= 0)
 									{
 										motoristaLista.get(i).alterar();
 									}
@@ -364,7 +364,7 @@ public static void main(String args[]) {
 								i = sc.nextInt(); 
 								
 								
-									if(i < motoristaLista.size() && i > 0)
+									if(i < motoristaLista.size() && i >= 0)
 									{
 										motoristaLista.remove(i);
 								
