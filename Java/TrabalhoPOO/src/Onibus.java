@@ -1,4 +1,6 @@
-public class Onibus
+import java.util.Scanner;
+
+public class Onibus extends Metodos
 {
 	private String modelo;
 	private int anoFab;
@@ -6,17 +8,80 @@ public class Onibus
 	private double kilometragem;
 	private Motorista motorista;
 	private int assentos[][] = new int[8][4];
+	private boolean temRota = false;
 	
-	public Onibus(String modelo, int anoFab, String marca, double kilometragem, Motorista motorista)
-	{
-		setModelo(modelo);
-		setAnoFab(anoFab);
-		setMarca(marca);
-		setKilometragem(kilometragem);
-		setMotorista(motorista);
-		// Java inicia com 0s matriz de inteiros por default, não é preciso inicializar ela :)
+
+	public void cadastra(){
+		
+		Scanner sc = new Scanner(System.in);
+		String modelo,marca;
+		int anoF;
+		double kilometros;
+		
+		System.out.println("\nModelo do onibus: ");
+		modelo = sc.next();
+		this.setModelo(modelo);
+				
+		System.out.println("Ano de fabricacao: ");
+		anoF = sc.nextInt();
+		this.setAnoFab(anoF);
+				
+		System.out.println("Marca do Onibus: ");
+		marca = sc.next();
+		this.setMarca(marca);
+				
+		System.out.println("Kilometragem do Onibus: ");
+		kilometros = sc.nextDouble();
+		this.setKilometragem(kilometros);
+		
 	}
 	
+	public void alterar()
+	{
+		int op;
+		Scanner sc = new Scanner(System.in);
+		
+		do{
+			System.out.println("\n1- Modelo");
+			System.out.println("2- Marca");
+			System.out.println("3- Kilometragem");
+			System.out.println("Digite a opcao que deseja alterar: ");
+			op = sc.nextInt();
+		}while(op < 1 || op > 3);
+		
+		if(op == 1)
+		{
+			String Modelo;
+			System.out.println("Digite o modelo do onibus: ");
+			Modelo = sc.next();
+			this.setModelo(Modelo);
+		}
+		
+		else if(op == 2)
+		{
+			String Marca;
+			System.out.println("Digite a marca do onibus: ");
+			Marca = sc.next();
+			this.setMarca(Marca);
+		}
+		
+		else
+		{
+			double Kilometragem;
+			System.out.println("Digite a kilometragem do onibus: ");
+			Kilometragem = sc.nextDouble();
+			this.setKilometragem(Kilometragem);
+		}
+		
+		System.out.println("Alteracao salva com sucesso!");
+	}
+	
+	public boolean getTemRota() {
+		return this.temRota;
+	}
+	public void setTemRota() {
+		this.temRota = true;
+	}
     public Motorista getMotorista() {
 		return motorista;
 	}
@@ -92,7 +157,7 @@ public class Onibus
 	public void exibirAssentos(){
 		
 		int i,j;
-		System.out.println("0 - Assento livre | 1 - Assento ocupado\n");
+		System.out.println("\n0 - Assento livre | 1 - Assento ocupado\n");
 		System.out.println("  0   1   2   3");
 		for(i=0; i<8; i++)
 		{
@@ -107,11 +172,4 @@ public class Onibus
 		} 
 		
 	}
-		/* Na main:
-		
-		objeto.exibirAssentos();
-		System.out.println("Digite as coordenadas do assento: "); -> Exemplo: 0 1, 2 0, 3 2, ...
-		Ler coordenadas e guardar em duas variaveis
-		objeto.setAssentos(var1, var2);
-		*/
 }

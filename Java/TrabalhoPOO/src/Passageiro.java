@@ -1,70 +1,175 @@
+import java.util.Scanner;
+import java.util.ArrayList;
 
-public class Passageiro {
+public class Passageiro extends Metodos{
 	
-	private double RG;
-	private Data DataNsc;
-	private Hora HoraNsc;
-	private String nome;
-	private String endereco;
-	private int tipo;
-	private Rotas rota;
+	Scanner sc = new Scanner(System.in);
 	
-	public Passageiro(double rG, Data dataNsc, Hora horaNsc, String nome, String endereco, int tipo) {
-		RG = rG;
-		DataNsc = dataNsc;
-		this.nome = nome;
-		this.endereco = endereco;
-		this.tipo = tipo;
-		this.HoraNsc = horaNsc;
-	}
+	private double pRG;
+	private Data pDataNsc;
+	private String pNome;
+	private String pEndereco;
+	private String pProfissao;
+	private int pCod;
+	private ArrayList<Rotas> passagens = new ArrayList<>();
 	
 	
-	public Hora getHoraNsc() {
-		return HoraNsc;
-	}
-
-	public void setHoraNsc(Hora horaNsc) {
-		HoraNsc = horaNsc;
-	}
-	public double getRG() {
-		return RG;
-	}
-
-	public void setRG(double rG) {
-		RG = rG;
+	public void cadastra()
+	{
+		String nome, endereco, profissao;
+		int cod; 
+		double rg;
+		
+		System.out.println("\n\nDigite o codigo do passageiro: ");
+		cod = sc.nextInt();
+		this.setPCod(cod);
+		
+		System.out.println("Digite o nome do passageiro: ");
+		nome = sc.next();
+		this.setPNome(nome);
+		
+		System.out.println("Digite o numero do RG: ");
+		rg = sc.nextDouble();
+		this.setPRG(rg);
+		
+		System.out.println("Digite o endereco do passageiro: ");
+		endereco = sc.next();
+		this.setPEndereco(endereco);
+		
+		System.out.println("Digite a profissao do passageiro: ");
+		profissao = sc.next();
+		this.setPProfissao(profissao);
+		
+		System.out.print("Digite a data de nascimento no formato dd mm aaaa: ");
+		int dia = sc.nextInt();
+		int mes = sc.nextInt();
+		int ano = sc.nextInt();
+										
+		Data data = new Data(dia,mes,ano);
+		this.setPDataNsc(data);
+											
+		System.out.println("\nO(a) passageiro(a) "+ getPNome() + " foi cadastrado(a) com sucesso!");
 	}
 	
-	public Data getDataNsc() {
-		return DataNsc;
+	public void alterar()
+	{
+		int op;
+		Scanner sc = new Scanner(System.in);
+		
+		do{
+			System.out.println("\n1- Nome");
+			System.out.println("2- Endereco");
+			System.out.println("3- Profissao");
+			System.out.println("Digite a opcao que deseja alterar: ");
+			op = sc.nextInt();
+		}while(op < 1 || op > 3);
+		
+		if(op == 1)
+		{
+			String nome;
+			System.out.println("Digite o nome do passageiro: ");
+			nome = sc.next();
+			this.setPNome(nome);
+		}
+		
+		else if(op == 2)
+		{
+			String endereco;
+			System.out.println("Digite o endereco do passageiro: ");
+			endereco = sc.next();
+			this.setPEndereco(endereco);
+		}
+		
+		else
+		{
+			String profissao;
+			System.out.println("Digite a profissao do passageiro: ");
+			profissao = sc.next();
+			this.setPProfissao(profissao);
+		}
+		
+		System.out.println("Alteracao salva com sucesso!");
 	}
-	public void setDataNsc(Data dataNsc) {
-		DataNsc = dataNsc;
+	
+	public double getPRG() {
+		return pRG;
 	}
-	public String getNome() {
-		return nome;
+	public void setPRG(double rG) {
+		if(rG > 0)
+			this.pRG = rG;
+		else
+			System.out.println("RG Invalido!");
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	
+	public Data getPDataNsc() {
+		return pDataNsc;
 	}
-	public String getEndereco() {
-		return endereco;
+	public void setPDataNsc(Data dataNsc) {
+		this.pDataNsc = dataNsc;
 	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+	
+	public String getPNome() {
+		return pNome;
 	}
-	public int getTipo() {
-		return tipo;
+	public void setPNome(String nome) {
+		if(nome != "")
+			this.pNome = nome;
+		else
+			System.out.println("Nome invalido!");
 	}
-	public void setTipo(int tipo) {
-		this.tipo = tipo;
+	
+	public String getPProfissao() {
+		return pProfissao;
 	}
-
-	public Rotas getRota() {
-		return rota;
+	public void setPProfissao(String profissao) {
+		if(profissao != "")
+			this.pProfissao = profissao;
+		else
+			System.out.println("Profissao invalida!");
 	}
-
-	public void setRota(Rotas rota) {
-		this.rota = rota;
+	
+	public String getPEndereco() {
+		return pEndereco;
+	}
+	public void setPEndereco(String endereco) {
+		if(endereco != "")
+			this.pEndereco = endereco;
+		else
+			System.out.println("Endereco invalido!");
+	}
+	
+	public int getPCod() {
+		return pCod;
+	}
+	public void setPCod(int tipo) {
+		if(tipo >= 0)
+			this.pCod = tipo;
+		else
+			System.out.println("Codigo invalido!");
+	}
+	public void apresentaPassageiro() {
+		int i;
+		System.out.println(" Passageiro " + this.getPNome() + " Possui "+ passagens.size() +" passagens");
+		for(i=0;i<passagens.size();i++) {
+			passagens.get(i).exibeRotas();
+			
+		}
+		
+	}
+	
+	public void apresentaPassageiro(int j) {
+		int i;
+		System.out.println("[" + j+ "]" + " Passageiro " + this.getPNome() + " Possui "+ passagens.size() +" passagens");
+		for(i=0;i<passagens.size();i++) {
+			passagens.get(i).exibeRotas();
+			
+		}
+		
+	}
+	
+	public void setPassagens(Rotas passagem){
+		this.passagens.add(passagem);
+		System.out.println("Passagem para " + passagem.getRdestino()+ " comprada!");
 	}
 	
 }
