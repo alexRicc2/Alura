@@ -455,9 +455,8 @@ public static void main(String args[]) {
 				System.out.println("\nDigite o indice do passageiro desejado: ");
 				posPassageiro = sc.nextInt(); 
 				
-				for(int aux=0; aux<passageirosLista.size(); aux++)
-				{
-					if(aux == posPassageiro)
+				
+					if(posPassageiro < passageirosLista.size() && posPassageiro >= 0 )
 					{
 						System.out.println("\nEscolha a rota que ira comprar");
 				
@@ -467,9 +466,8 @@ public static void main(String args[]) {
 						}
 						posRota = sc.nextInt(); 
 						
-						for(int aux1=0; aux1<rotasLista.size(); aux1++)
-								{
-									if(aux1 == posRota)
+								
+									if(posRota < rotasLista.size() && posRota > 0)
 									{
 										System.out.println("Escolha seu assento no onibus");
 										rotasLista.get(posRota).getOnibus().exibirAssentos();
@@ -488,14 +486,14 @@ public static void main(String args[]) {
 									{
 										System.out.println("Desculpe, nao ha rotas cadastradas com o codigo inserido!");
 									}
-								}		
+								
 						
 					}									
 					else
 					{
 						System.out.println("Desculpe, nao ha passageiros cadastrados com o codigo inserido!");
 					}
-				}			
+							
 				
 			}
 			
