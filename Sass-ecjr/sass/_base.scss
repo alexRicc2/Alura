@@ -1,0 +1,27 @@
+$text-color: orange;
+
+@mixin box-shadow($color){
+    box-shadow: 2px 2px 4px -2px $color;
+}
+
+body{
+    background-color: aqua;
+    color: $text-color
+}
+.container{
+    @include box-shadow(rgba(0,0,0,.5));
+    color: white;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+
+
+    p{
+        color:red;
+    }
+}
+@for $i from 1 through 5{
+    .texto-#{$i}{
+        font-size: 15px * $i;
+    }
+}
