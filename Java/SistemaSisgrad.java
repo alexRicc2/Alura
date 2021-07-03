@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.*;
 
 public class SistemaSisgrad{
 	
@@ -13,7 +14,32 @@ public class SistemaSisgrad{
 		int op=1;
 		Scanner sc = new Scanner(System.in);
 		
-		while(op != 0){
+		try {
+			FileReader arq = new FileReader("alunos.txt");
+			BufferedReader lerArq = new BufferedReader(arq);
+			
+			while(lerArq.ready()) {
+				String linha = lerArq.readLine();
+				Aluno aluno = new Aluno(linha);
+				turma.add(aluno);
+				
+			}
+			FileReader arq2 = new FileReader("professores.txt");
+			BufferedReader lerArq2 = new BufferedReader(arq2);
+			
+			while(lerArq2.ready()) {
+				String linha = lerArq2.readLine();
+				Professor professor = new Professor(linha);
+				corpoDocente.add(professor);
+				
+			}
+		}
+		catch (IOException e) {
+			System.out.println("Erro\n");
+		}
+		
+		
+		while(op != 7){
 			
 			System.out.println("\nSistema sisgrad");
 			System.out.println("(1) Inserir Aluno");
@@ -22,6 +48,7 @@ public class SistemaSisgrad{
 			System.out.println("(4) Remover professor");
 			System.out.println("(5) Printar lista de alunos");
 			System.out.println("(6) Printar lista de professores");
+			System.out.println("(7) Salvar e sair");
 			
 			
 			
@@ -70,6 +97,29 @@ public class SistemaSisgrad{
 			else if(op == 6){
 				for(int i=0; i < corpoDocente.size(); i++){
 					System.out.println(corpoDocente.get(i).getNome());
+				}
+			}
+			else if(op == 7) {
+				
+				try {
+					String nome_arquivo = "alunos.txt";
+					String nome_arquivo2 = "professores.txt";
+					File arq = new File(nome_arquivo);
+					File arq2 = new File(nome_arquivo2);
+					FileWriter escritorAluno = new FileWriter(arq, false);
+					FileWriter escritorProfessor = new FileWriter(arq2,false);
+					
+					for(int i=0; i < corpoDocente.size(); i++) {
+						escritorProfessor.write(corpoDocente.get(i).getNome() + "\n");
+					}
+					for(int i=0; i < turma.size(); i++) {
+						escritorAluno.write(turma.get(i).getNome() + "\n");
+					}
+					escritorProfessor.close();
+					escritorAluno.close();
+				}
+				catch (IOException e) {
+					System.out.println("Erro\n");
 				}
 			}
 			
