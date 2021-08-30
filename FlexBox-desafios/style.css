@@ -15,9 +15,8 @@ div:nth-child(8){background-color: silver;}
 .flexContainer{
     height: 60vh;
     display: flex;
-    /*flex-direction: column;
-    justify-content: stretch;
-    align-items: center;*/
+    /* flex-direction: column;
+    align-items: center; */
 }
 .flexItem{
     flex-shrink: 1;
